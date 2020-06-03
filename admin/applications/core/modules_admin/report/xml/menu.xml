@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menu>
+	<tabitems>
+		<item>
+			<title>Обзор системы</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Обзор</subitemtitle>
+					<subitemlang>reports_overview</subitemlang>
+					<subsection>reports</subsection>
+					<subitemurl>do=show_main</subitemurl>
+					<subitemrolekey></subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>
+			</subitems>
+		</item>
+		<item>
+			<title>Плагины системы</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Плагины системы жалоб</subitemtitle>
+					<subitemlang>reports_plugin</subitemlang>
+					<subsection>reports</subsection>
+					<subitemurl>do=plugin</subitemurl>
+					<subitemrolekey>plugins_manage</subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>
+			</subitems>
+		</item>
+		<item>
+			<title>Статусы жалоб</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Статусы жалоб</subitemtitle>
+					<subitemlang>reports_ssl</subitemlang>
+					<subsection>reports</subsection>
+					<subitemurl>do=status</subitemurl>
+					<subitemrolekey>sands_manage</subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>
+			</subitems>
+		</item>
+	</tabitems>
+</menu>

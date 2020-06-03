@@ -1,0 +1,876 @@
+<?xml version="1.0" encoding="utf-8"?>
+<settingexport>
+  <settinggroup>
+    <setting>
+      <conf_is_title>1</conf_is_title>
+      <conf_title_keyword>topicspostsandpolls</conf_title_keyword>
+      <conf_title_title>Темы, Сообщения и Опросы</conf_title_title>
+      <conf_title_desc>Группа опций для настройки параметров отображения тем, а так же ограничений при отправке сообщений, опросов.</conf_title_desc>
+      <conf_title_tab>Forums</conf_title_tab>
+      <conf_title_app>forums</conf_title_app>
+      <conf_title_noshow>0</conf_title_noshow>
+    </setting>
+    <setting>
+      <conf_title>Количество тем, отображаемых в списке тем форума</conf_title>
+      <conf_description/>
+      <conf_group>25</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>display_max_topics</conf_key>
+      <conf_default>30</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>1</conf_position>
+      <conf_start_group>Просмотр тем</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>topicspostsandpolls</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Количество оценок для отображения рейтинга темы</conf_title>
+      <conf_description>Количество оценок темы, требуемое для отображения рейтинг темы. Если их меньше, то рейтинг не показывается.</conf_description>
+      <conf_group>25</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>topic_rating_needed</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>2</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>topicspostsandpolls</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Количество сообщений в теме, после которого тема становится «горячей»?</conf_title>
+      <conf_description/>
+      <conf_group>25</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>hot_topic</conf_key>
+      <conf_default>15</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>3</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>topicspostsandpolls</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Удалять ссылки на перенесенные темы через Х дней</conf_title>
+      <conf_description>Если установлено значение 0, автоматическое удаление производиться не будет</conf_description>
+      <conf_group>25</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>topic_redirect_prune</conf_key>
+      <conf_default>30</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>3</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>topicspostsandpolls</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Через сколько дней удалять отмеченные к удалению темы</conf_title>
+      <conf_description>Темы и сообщения при удалении помечаются флагом о необходимости их удаления. При этом физически они остаются в базе, что позволяет вам восстановить их через модераторскую панель. Данная опция позволяет настроить количество дней через которое темы и сообщения отмеченные к удалению будут физически удалены.</conf_description>
+      <conf_group>25</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>days_to_keep_deletions</conf_key>
+      <conf_default>5</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>5</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>delete, deletions, deleted, deletion, marked</conf_keywords>
+      <conf_title_keyword>topicspostsandpolls</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Максимальная длина заголовка темы</conf_title>
+      <conf_description/>
+      <conf_group>25</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>topic_title_max_len</conf_key>
+      <conf_default>150</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>7</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>topicspostsandpolls</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title><![CDATA[Включить &#39;Темы с такими же тегами&#39;]]></conf_title>
+      <conf_description>Если у темы есть теги и такие же теги есть у других тем, то они будут показаны в блоке перед быстрым ответом</conf_description>
+      <conf_group>25</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>forums_enabled_also_tagged</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>8</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>topicspostsandpolls</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Удалять множество восклицательных/вопросительных знаков в названиях тем?</conf_title>
+      <conf_description>Например, Посмотрите!!!!! будет заменено на Посмотрите!.</conf_description>
+      <conf_group>25</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>etfilter_punct</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>8</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>topicspostsandpolls</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Запретить использование только заглавных букв в названиях тем?</conf_title>
+      <conf_description>Например, НАЖМИТЕ СЮДА будет заменено на Нажмите сюда — следует правильно выбрать локаль на сервере</conf_description>
+      <conf_group>25</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>etfilter_shout</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>9</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>topicspostsandpolls</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Количество сообщений, размещаемых на одной странице темы</conf_title>
+      <conf_description/>
+      <conf_group>25</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>display_max_posts</conf_key>
+      <conf_default>20</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>10</conf_position>
+      <conf_start_group>Просмотр сообщений</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>topicspostsandpolls</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Открывать внешние ссылки в новом окне?</conf_title>
+      <conf_description>Ссылки, которые ведут на внешние ресурсы, будут открываться в новом окне (в браузере должен быть включен javascript).</conf_description>
+      <conf_group>25</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>links_external</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp><![CDATA[$this->DB->delete( 'content_cache_posts' );
+$this->DB->delete( 'content_cache_sigs' );
+]]></conf_evalphp>
+      <conf_protected>1</conf_protected>
+      <conf_position>11</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>topicspostsandpolls</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Автоматически изменять размер изображений при определенном размере</conf_title>
+      <conf_description>По умолчанию система пытается изменить изображения так, чтобы оно не вылезало за ширину экрана. Однако, если вы хотите, чтобы уменьшение шло при конкретной ширине/высоте, используйте эту опцию. Если вы введете 600, то все изображения чья высота/ширина больше 600, будут уменьшены не зависимо от того помещаются они на экране или нет.</conf_description>
+      <conf_group>25</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>resize_img_force</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>12</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>topicspostsandpolls</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Не игнорируемые группы пользователей</conf_title>
+      <conf_description>Пользователей выбранных групп не возможно будет добавить в список игнорирования</conf_description>
+      <conf_group>25</conf_group>
+      <conf_type>multi</conf_type>
+      <conf_key>cannot_ignore_groups</conf_key>
+      <conf_default>,4,</conf_default>
+      <conf_extra>#show_groups#</conf_extra>
+      <conf_evalphp><![CDATA[if ( $save == 1)
+{
+	if ( is_array($_POST['cannot_ignore_groups']) )
+	{
+		$_POST['cannot_ignore_groups'] = ','.implode(",",$_POST['cannot_ignore_groups']).',';
+	}
+	else
+	{
+		$_POST['cannot_ignore_groups'] = "";
+	}
+	
+	$key = 'cannot_ignore_groups';
+}
+if ( $show == 1 )
+{
+$key = 'cannot_ignore_groups[]';
+}]]></conf_evalphp>
+      <conf_protected>1</conf_protected>
+      <conf_position>16</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>topicspostsandpolls</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Сортировать сообщения по</conf_title>
+      <conf_description/>
+      <conf_group>25</conf_group>
+      <conf_type>dropdown</conf_type>
+      <conf_key>post_order_column</conf_key>
+      <conf_default>pid</conf_default>
+      <conf_extra><![CDATA[pid=номеру&#13;
+post_date=дате публикации]]></conf_extra>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>17</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>topicspostsandpolls</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Сортировать сообщения по</conf_title>
+      <conf_description/>
+      <conf_group>25</conf_group>
+      <conf_type>dropdown</conf_type>
+      <conf_key>post_order_sort</conf_key>
+      <conf_default>asc</conf_default>
+      <conf_extra><![CDATA[asc=возрастанию (0-9)&#13;
+desc=убыванию (9-0)]]></conf_extra>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>18</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>topicspostsandpolls</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Максимальное количество смайлов в одном сообщении</conf_title>
+      <conf_description/>
+      <conf_group>25</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>max_emos</conf_key>
+      <conf_default>10</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>19</conf_position>
+      <conf_start_group>Создание сообщений</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>topicspostsandpolls</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Максимальное количество изображений в одном сообщении</conf_title>
+      <conf_description/>
+      <conf_group>25</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>max_images</conf_key>
+      <conf_default>10</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>20</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>topicspostsandpolls</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Разрешенные к публикации в сообщениях расширения файлов изображений</conf_title>
+      <conf_description><![CDATA[Определите расширения файлов изображений, публикуемых через тэги [img][/img].
+Разделяйте их, используя запятую (gif,jpeg,jpg)]]></conf_description>
+      <conf_group>25</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>img_ext</conf_key>
+      <conf_default>gif,jpeg,jpg,png</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>21</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>topicspostsandpolls</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Максимальный размер сообщения (в килобайтах)</conf_title>
+      <conf_description/>
+      <conf_group>25</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>max_post_length</conf_key>
+      <conf_default>100</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>22</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>topicspostsandpolls</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Автоматически разбирать ссылки на медиа-контент?</conf_title>
+      <conf_description>Включение опции позволяет распознавать ссылки на медиа-контент, даже если для них не был указан необходимый bb-код.</conf_description>
+      <conf_group>25</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>bbcode_automatic_media</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>23</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>topicspostsandpolls</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Максимальная высота прикрепленного к сообщению медиа ролика (в пикселях)</conf_title>
+      <conf_description><![CDATA[Только при использовании тегов [media], где они разрешены]]></conf_description>
+      <conf_group>25</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>max_h_flash</conf_key>
+      <conf_default>199</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>24</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>topicspostsandpolls</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Максимальная ширина прикрепленного к сообщению медиа ролика (в пикселях)</conf_title>
+      <conf_description><![CDATA[Только при использовании тегов [media], где они разрешены]]></conf_description>
+      <conf_group>25</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>max_w_flash</conf_key>
+      <conf_default>199</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>25</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>topicspostsandpolls</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Запретить цитирование цитат?</conf_title>
+      <conf_description><![CDATA[Эта опция будет удалять любой цитируемый текст при цитировании сообщения, содержащего цитаты.<br><a href='#' title='и если это имеет какой-то смысл, то вы гораздо умнее меня.'>..</a>]]></conf_description>
+      <conf_group>25</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>strip_quotes</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>26</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>topicspostsandpolls</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Максимальное число цитат в одном сообщении</conf_title>
+      <conf_description>Используя этот пункт, вы можете предотвратить создание сообщений с очень большим количеством цитат, это исключает возможное «падение» некоторых браузеров.</conf_description>
+      <conf_group>25</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>max_quotes_per_post</conf_key>
+      <conf_default>10</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>27</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>topicspostsandpolls</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Склейка сообщений</conf_title>
+      <conf_description><![CDATA[Когда пользователь публикует 2 сообщения подряд в одну тему с интервалом не более <em>n</em> минут, то его сообщения объединяются в одно. Введите кол-во минут, в течение которых такие сообщения склеиваются. Введите 0, чтобы отключить опцию.]]></conf_description>
+      <conf_group>25</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>post_merge_conc</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>28</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>topicspostsandpolls</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Использовать фильтрацию URL?</conf_title>
+      <conf_description>Если вы хотите ввести фильтр ссылок, основываясь на настройке белого и черного списков, включите данную функцию. Фильтрация URL позволяет (белый список) и запрещает (черный список) использовать определенные ссылки в сообщениях и изображениях.</conf_description>
+      <conf_group>25</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>ipb_use_url_filter</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>29</conf_position>
+      <conf_start_group>Фильтрация ссылок</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>topicspostsandpolls</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Какой фильтр использовать?</conf_title>
+      <conf_description><![CDATA[От выбора типа списка зависит логика работы фильтра ссылок.<br />
+Если вы выбираете черный список, то вы запрещаете публикацию только ОПРЕДЕЛЕННЫХ ссылок, в то время как все остальные ссылки будут разрешены. <br />
+Если вы выбираете белый список, то вы запрещаете публикацию ВСЕХ ссылок, кроме тех, что перечислены в списке.]]></conf_description>
+      <conf_group>25</conf_group>
+      <conf_type>dropdown</conf_type>
+      <conf_key>ipb_url_filter_option</conf_key>
+      <conf_default>black</conf_default>
+      <conf_extra><![CDATA[white=белый список&#13;
+black=черный список]]></conf_extra>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>30</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>topicspostsandpolls</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Настройки белого списка</conf_title>
+      <conf_description><![CDATA[Здесь можно указать ссылки, которые вы хотите позволить. Можно использовать подстановочный символ *. По одной ссылке на строку.<br /><br />
+
+Например: http://www.yourdomain.com*<br />
+http://*.google.com/*]]></conf_description>
+      <conf_group>25</conf_group>
+      <conf_type>textarea</conf_type>
+      <conf_key>ipb_url_whitelist</conf_key>
+      <conf_default/>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>31</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>topicspostsandpolls</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Настройки черного списка</conf_title>
+      <conf_description><![CDATA[Здесь можно указать ссылки, которые вы хотите запретить. Можно использовать подстановочный символ *. По одной ссылке на строку.<br /><br />
+Например: http://*.somedomain.com*<br />
+http://competitor_domain.com*]]></conf_description>
+      <conf_group>25</conf_group>
+      <conf_type>textarea</conf_type>
+      <conf_key>ipb_url_blacklist</conf_key>
+      <conf_default/>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>32</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>topicspostsandpolls</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title><![CDATA[Добавлять rel=&quot;nofollow&quot; к размещенным ссылкам?]]></conf_title>
+      <conf_description/>
+      <conf_group>25</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>posts_add_nofollow</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>33</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>topicspostsandpolls</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Показывать прикрепленные изображения в сообщении?</conf_title>
+      <conf_description>Если данная опция отключена, то прикрепленное изображение будет выводиться в тексте сообщения, как ссылка.</conf_description>
+      <conf_group>25</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>show_img_upload</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>34</conf_position>
+      <conf_start_group>Прикрепленные изображения</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>topicspostsandpolls</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Показывать эскизы прикрепленных изображений?</conf_title>
+      <conf_description>Если опция выше включена, то включение еще и этой позволит отображать в сообщении уменьшенную копию прикрепленного изображения. Это экономит трафик и загружается гораздо быстрее. Нажав на уменьшенную копию, пользователь загрузит полномасштабное изображение.</conf_description>
+      <conf_group>25</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>siu_thumb</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra>siu_thumb</conf_extra>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>36</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>topicspostsandpolls</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title><![CDATA[Размер эскиза прикрепленного изображения [ширина] ]]></conf_title>
+      <conf_description>Если обе опции выше включены, то вы можете здесь определить максимальную ширину эскиза. Если прикрепляемое изображение будет меньше по размерам, то он будет попросту сразу отображено без каких-либо действий с ним.</conf_description>
+      <conf_group>25</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>siu_width</conf_key>
+      <conf_default>100</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>37</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>topicspostsandpolls</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title><![CDATA[Размер эскиза прикрепленного изображения [высота]]]></conf_title>
+      <conf_description>Если обе опции выше включены, то вы можете здесь определить максимальную высоту эскиза. Если прикрепляемое изображение будет меньше по размерам, то он будет попросту сразу отображено без каких-либо действий с ним.</conf_description>
+      <conf_group>25</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>siu_height</conf_key>
+      <conf_default>100</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>38</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>topicspostsandpolls</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title><![CDATA[Максимальный размер прикрепляемого изображения [ширина]]]></conf_title>
+      <conf_description>Если изображение будет больше указанного ограничения, то оно будет уменьшено.</conf_description>
+      <conf_group>25</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>attach_img_max_w</conf_key>
+      <conf_default>1200</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>39</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>topicspostsandpolls</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title><![CDATA[Имя гостя [префикс]]]></conf_title>
+      <conf_description>Опция позволяет сделает имена пользователей и гостей различными, путем добавления префикса к имени гостя. Это позволяет предотвратить проблему совпадения их имен.</conf_description>
+      <conf_group>25</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>guest_name_pre</conf_key>
+      <conf_default>Гость_</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>40</conf_position>
+      <conf_start_group>Имена гостей</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>topicspostsandpolls</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title><![CDATA[Максимальный размер прикрепляемого изображения  [высота]]]></conf_title>
+      <conf_description>Если изображение будет больше указанного ограничения, то оно будет уменьшено.</conf_description>
+      <conf_group>25</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>attach_img_max_h</conf_key>
+      <conf_default>1600</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>40</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>topicspostsandpolls</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Отключить lightbox?</conf_title>
+      <conf_description>Позволяет отключить эффекты при просмотре прикрепленных изображений на форуме.</conf_description>
+      <conf_group>25</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>disable_lightbox</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>40</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>topicspostsandpolls</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title><![CDATA[Имя гостя [суффикс]]]></conf_title>
+      <conf_description>Опция позволяет сделать имена пользователей и гостей различными, путем добавления суффикса к имени гостя. Это позволяет предотвратить проблему совпадения их имен.</conf_description>
+      <conf_group>25</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>guest_name_suf</conf_key>
+      <conf_default>_*</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>41</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>topicspostsandpolls</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Максимальное количество вопросов в одном опросе</conf_title>
+      <conf_description>Введите максимальное количество вопросов, которые пользователи могут создать в одном опросе.</conf_description>
+      <conf_group>25</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>max_poll_questions</conf_key>
+      <conf_default>3</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>43</conf_position>
+      <conf_start_group>Опросы</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>topicspostsandpolls</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Максимальное количество вариантов ответа в опросе</conf_title>
+      <conf_description/>
+      <conf_group>25</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>max_poll_choices</conf_key>
+      <conf_default>20</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>44</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>topicspostsandpolls</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Разрешить пользователям просматривать результаты опроса, не теряя права голоса в нем?</conf_title>
+      <conf_description/>
+      <conf_group>25</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>allow_result_view</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>45</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>topicspostsandpolls</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Разрешить автору опроса голосовать в нем?</conf_title>
+      <conf_description/>
+      <conf_group>25</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>allow_creator_vote</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>46</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>topicspostsandpolls</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Разрешить автору создавать «только опросы»?</conf_title>
+      <conf_description>Если данная опция включена, авторы опросов могут запретить создавать ответные сообщения в теме опроса.</conf_description>
+      <conf_group>25</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>ipb_poll_only</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>47</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>topicspostsandpolls</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Разрешить открытые опросы?</conf_title>
+      <conf_description>В открытых опросах можно видеть, кто за какой вариант ответа проголосовал.</conf_description>
+      <conf_group>25</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>poll_allow_public</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>48</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>topicspostsandpolls</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Разрешить удалять свой голос?</conf_title>
+      <conf_description>Если включено, то пользователи смогут удалять свои голоса. Для администраторов и супермодераторов эта опция включена всегда.</conf_description>
+      <conf_group>25</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>poll_allow_vdelete</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>49</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>topicspostsandpolls</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Количество часов с момента создания темы, в течение которых автору доступна возможность добавления к ней опроса</conf_title>
+      <conf_description>Опция не распространяется на администраторов и супермодераторов.</conf_description>
+      <conf_group>25</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>startpoll_cutoff</conf_key>
+      <conf_default>24</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>50</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>topicspostsandpolls</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Разрешить загрузку нескольких файлов с использованием flash-загрузчика?</conf_title>
+      <conf_description/>
+      <conf_group>25</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>uploadFormType</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>52</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>topicspostsandpolls</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Максимальное количество медиа файлов в сообщении</conf_title>
+      <conf_description>Большое количество медиа файлов может привести к «падению» браузера.</conf_description>
+      <conf_group>25</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>max_media_files</conf_key>
+      <conf_default>2</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>53</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>media, bbcode</conf_keywords>
+      <conf_title_keyword>topicspostsandpolls</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+  </settinggroup>
+</settingexport>

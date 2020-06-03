@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menu>
+	<tabitems>
+		<item>
+			<title>Планировщик задач</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Управление планировщиком задач</subitemtitle>
+					<subitemlang>taskmanager</subitemlang>
+					<subsection>taskmanager</subsection>
+					<subitemurl>do=overview</subitemurl>
+					<subitemrolekey>task_manage</subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>
+			</subitems>
+		</item>
+		<item>
+			<title>Центр безопасности</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Инструменты безопасности</subitemtitle>
+					<subitemlang>security</subitemlang>
+					<subsection>security</subsection>
+					<subitemurl></subitemurl>
+					<subitemrolekey>security_center</subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>
+				</subitems>
+		</item>
+		<item>
+			<title>Список администраторов</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Список администраторов</subitemtitle>
+					<subitemlang>listadmins</subitemlang>
+					<subsection>security</subsection>
+					<subitemurl>do=list_admins</subitemurl>
+					<subitemrolekey>list_admins</subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>
+			</subitems>
+		</item>	
+	</tabitems>
+</menu>

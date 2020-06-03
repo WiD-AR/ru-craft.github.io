@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menu>
+	<tabitems>
+		<item>
+			<title>Архивирование</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Обзор</subitemtitle>
+					<subitemlang>archive</subitemlang>
+					<subsection>archive</subsection>
+					<subitemurl>do=forums_overview</subitemurl>
+					<subitemrolekey></subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>
+			</subitems>
+		</item>
+		<item>
+			<title>Правила</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Управление правилами</subitemtitle>
+					<subitemlang>archive</subitemlang>
+					<subsection>archive</subsection>
+					<subitemurl>do=rules</subitemurl>
+					<subitemrolekey>archive_rules</subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>				
+			</subitems>
+		</item>
+	</tabitems>
+</menu>

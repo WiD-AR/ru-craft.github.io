@@ -1,0 +1,1182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<settingexport>
+  <settinggroup>
+    <setting>
+      <conf_is_title>1</conf_is_title>
+      <conf_title_keyword>personalmessagesetup</conf_title_keyword>
+      <conf_title_title>Настройки личных сообщений</conf_title_title>
+      <conf_title_desc>Настройки данной группы, позволяют изменить глобальные параметры системы личных сообщений форума.</conf_title_desc>
+      <conf_title_tab>Members</conf_title_tab>
+      <conf_title_app>members</conf_title_app>
+      <conf_title_noshow>0</conf_title_noshow>
+    </setting>
+    <setting>
+      <conf_title>Максимальное количество ЛС на одной странице при просмотре списка сообщений</conf_title>
+      <conf_description>По умолчанию - 50.</conf_description>
+      <conf_group>26</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>show_max_msg_list</conf_key>
+      <conf_default>50</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>3</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>personalmessagesetup</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Не игнорируемые группы:</conf_title>
+      <conf_description>Пользователи не смогут блокировать получение личных сообщений от пользователей выбранных групп. Можно выбрать несколько.</conf_description>
+      <conf_group>26</conf_group>
+      <conf_type>multi</conf_type>
+      <conf_key>unblockable_pm_groups</conf_key>
+      <conf_default/>
+      <conf_extra>#show_groups#</conf_extra>
+      <conf_evalphp><![CDATA[if ( $save == 1)
+{
+	if ( is_array($_POST['unblockable_pm_groups']) )
+	{
+		$_POST['unblockable_pm_groups'] = implode(",",$_POST['unblockable_pm_groups']);
+	}
+	else
+	{
+		$_POST['unblockable_pm_groups'] = "";
+	}
+	
+	$key = 'unblockable_pm_groups';
+}
+if ( $show == 1 )
+{
+    $key='unblockable_pm_groups[]';
+}]]></conf_evalphp>
+      <conf_protected>1</conf_protected>
+      <conf_position>4</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>personalmessagesetup</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Отключить лимит личного ящика для групп:</conf_title>
+      <conf_description>Пользователи выбранных групп смогут отправлять личные сообщения другим пользователям, даже если их личный ящик переполнен.</conf_description>
+      <conf_group>26</conf_group>
+      <conf_type>multi</conf_type>
+      <conf_key>override_inbox_full</conf_key>
+      <conf_default/>
+      <conf_extra>#show_groups#</conf_extra>
+      <conf_evalphp><![CDATA[if ( $save == 1)
+{
+	if ( is_array($_POST['override_inbox_full']) )
+	{
+		$_POST['override_inbox_full'] = implode(",",$_POST['override_inbox_full']);
+	}
+	else
+	{
+		$_POST['override_inbox_full'] = "";
+	}
+	
+	$key = 'override_inbox_full';
+}
+if ( $show == 1 )
+{
+    $key='override_inbox_full[]';
+}]]></conf_evalphp>
+      <conf_protected>1</conf_protected>
+      <conf_position>5</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>personalmessagesetup</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_is_title>1</conf_is_title>
+      <conf_title_keyword>warnsetup</conf_title_keyword>
+      <conf_title_title>Настройки систем жалоб и предупреждений</conf_title_title>
+      <conf_title_desc>Данный раздел позволяет настроить работу системы предупреждений и системы жалоб.</conf_title_desc>
+      <conf_title_tab>Members</conf_title_tab>
+      <conf_title_app>members</conf_title_app>
+      <conf_title_noshow>0</conf_title_noshow>
+    </setting>
+    <setting>
+      <conf_title>Включить систему предупреждений?</conf_title>
+      <conf_description/>
+      <conf_group>27</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>warn_on</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>1</conf_position>
+      <conf_start_group>Система предупреждений</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>warnsetup</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Разрешить модераторам устанавливать свои наказания, если нет предустановленных действий для предупреждений</conf_title>
+      <conf_description/>
+      <conf_group>27</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>warning_custom_noaction</conf_key>
+      <conf_default/>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>2</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>warnsetup</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title><![CDATA[Разрешить модераторам использовать причину &quot;Прочее&quot;]]></conf_title>
+      <conf_description/>
+      <conf_group>27</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>warnings_enable_other</conf_key>
+      <conf_default/>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>3</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>warnsetup</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Защищенные группы</conf_title>
+      <conf_description><![CDATA[Группы, пользователи которых не могут быть предупреждены.<br />Вы можете использовать выбрать более одной (используя клавишу Ctrl).]]></conf_description>
+      <conf_group>27</conf_group>
+      <conf_type>multi</conf_type>
+      <conf_key>warn_protected</conf_key>
+      <conf_default/>
+      <conf_extra>#show_groups#</conf_extra>
+      <conf_evalphp><![CDATA[if ( $save == 1)
+{
+	if ( is_array($_POST['warn_protected']) )
+	{
+		$_POST['warn_protected'] = implode(",",$_POST['warn_protected']);
+	}
+	else
+	{
+		$_POST['warn_protected'] = "";
+	}
+	
+	$key = 'warn_protected';
+}
+if ( $show == 1 )
+{
+    $key='warn_protected[]';
+}]]></conf_evalphp>
+      <conf_protected>1</conf_protected>
+      <conf_position>4</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>warnsetup</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Разрешить пользователям видеть свои предупреждения</conf_title>
+      <conf_description/>
+      <conf_group>27</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>warn_show_own</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>5</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>warnsetup</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Пользователь должен признать предупреждение чтобы продолжить работу с форумом?</conf_title>
+      <conf_description/>
+      <conf_group>27</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>warnings_acknowledge</conf_key>
+      <conf_default/>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>6</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>warnsetup</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Количество предупреждений одному пользователю от одного модератора за день</conf_title>
+      <conf_description/>
+      <conf_group>27</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>warn_mod_day</conf_key>
+      <conf_default>3</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>7</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>warnsetup</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Количество предупреждений одному пользователю от одного супермодератора за день</conf_title>
+      <conf_description/>
+      <conf_group>27</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>warn_gmod_day</conf_key>
+      <conf_default>3</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>8</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>warnsetup</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Группы, имеющие доступ к системе жалоб?</conf_title>
+      <conf_description><![CDATA[Укажите, какие группы имеют доступ к системе жалоб. <!--PERM_LINK-->]]></conf_description>
+      <conf_group>27</conf_group>
+      <conf_type>multi</conf_type>
+      <conf_key>report_mod_group_access</conf_key>
+      <conf_default>4</conf_default>
+      <conf_extra>#show_groups#</conf_extra>
+      <conf_evalphp><![CDATA[if ( $save == 1)
+{
+	if ( is_array($_POST['report_mod_group_access']) )
+	{
+		$_POST['report_mod_group_access'] = implode(",",$_POST['report_mod_group_access']);
+	}
+	else
+	{
+		$_POST['report_mod_group_access'] = "";
+	}
+	
+	$key = 'report_mod_group_access';
+}
+if ( $show == 1 )
+{
+    $key='report_mod_group_access[]';
+    $r['conf_description'] = str_replace( "<!--PERM_LINK-->", '<a href="' . $this->settings['base_url'] . 'module=report&section=reports&do=plugin">Настройки плагинов системы жалоб</a>', $r['conf_description'] );
+}]]></conf_evalphp>
+      <conf_protected>1</conf_protected>
+      <conf_position>9</conf_position>
+      <conf_start_group>Система жалоб</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>warnsetup</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_is_title>1</conf_is_title>
+      <conf_title_keyword>reputation</conf_title_keyword>
+      <conf_title_title>Настройки системы репутаций</conf_title_title>
+      <conf_title_desc>Настройки, при помощи которых вы можете настроить работу системы репутаций на ваших форумах</conf_title_desc>
+      <conf_title_tab>Members</conf_title_tab>
+      <conf_title_app>members</conf_title_app>
+      <conf_title_noshow>0</conf_title_noshow>
+    </setting>
+    <setting>
+      <conf_title>Включить систему репутаций?</conf_title>
+      <conf_description/>
+      <conf_group>28</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>reputation_enabled</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>741</conf_position>
+      <conf_start_group>Основные настройки</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>reputation</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Отключить репутацию группам:</conf_title>
+      <conf_description>Пользователи, выбранных групп, не смогут получать оценки репутации.</conf_description>
+      <conf_group>28</conf_group>
+      <conf_type>multi</conf_type>
+      <conf_key>reputation_protected_groups</conf_key>
+      <conf_default/>
+      <conf_extra>#show_groups#</conf_extra>
+      <conf_evalphp><![CDATA[if ( $save == 1)
+{
+	if ( is_array($_POST['reputation_protected_groups']) )
+	{
+		$_POST['reputation_protected_groups'] = implode(",",$_POST['reputation_protected_groups']);
+	}
+	else
+	{
+		$_POST['reputation_protected_groups'] = "";
+	}
+	
+	$key = 'reputation_protected_groups';
+}
+if ( $show == 1 )
+{
+    $key='reputation_protected_groups[]';
+}]]></conf_evalphp>
+      <conf_protected>1</conf_protected>
+      <conf_position>742</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>reputation</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Тип репутации</conf_title>
+      <conf_description>Тип позволяет вам выбрать режим работы системы репутации. Вы можете настроить репутацию так чтобы пользователи могли выставлять только положительные оценки, или только отрицательные.</conf_description>
+      <conf_group>28</conf_group>
+      <conf_type>dropdown</conf_type>
+      <conf_key>reputation_point_types</conf_key>
+      <conf_default>like</conf_default>
+      <conf_extra><![CDATA[positive=только положительное изменение репутации&#13;
+negative=только отрицательное изменение репутации&#13;
+both=любое изменение репутации
+like=только положительное с отображением кому понравилось (like-тип)]]></conf_extra>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>743</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>reputation</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Выделять публикации, имеющий более X баллов</conf_title>
+      <conf_description>Введите число баллов, которое требуется иметь публикации, чтобы она выделялась/подсвечивалась на странице.</conf_description>
+      <conf_group>28</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>reputation_highlight</conf_key>
+      <conf_default>50</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>744</conf_position>
+      <conf_start_group>Настройки отображения</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>reputation</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Отображать репутацию пользователей?</conf_title>
+      <conf_description>Включение данной опции позволит выводить репутацию пользователя в его профиле.</conf_description>
+      <conf_group>28</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>reputation_show_profile</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>745</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>reputation</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Отображать количество баллов публикаций</conf_title>
+      <conf_description>Включение данной опции позволит выводить количество баллов, около каждого оцененного материала.</conf_description>
+      <conf_group>28</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>reputation_show_content</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>746</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>reputation</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Разрешить пользователям оценивать свои публикации?</conf_title>
+      <conf_description>Включение данной опции позволит авторам выставлять оценку своим публикациям (сообщения, записи и прочее).</conf_description>
+      <conf_group>28</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>reputation_can_self_vote</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>747</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>reputation</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_is_title>1</conf_is_title>
+      <conf_title_keyword>displaynamesettings</conf_title_keyword>
+      <conf_title_title>Ограничения пользовательских имен</conf_title_title>
+      <conf_title_desc>Группа опций, позволяющих настроить ограничения, применяемые к именам пользователей при регистрации и смене.</conf_title_desc>
+      <conf_title_tab>Members</conf_title_tab>
+      <conf_title_app>members</conf_title_app>
+      <conf_title_noshow>0</conf_title_noshow>
+    </setting>
+    <setting>
+      <conf_title>Символы, допустимые в именах пользователей</conf_title>
+      <conf_description><![CDATA[Если опция включена, Invision Board при регистрации будет запрещать использование в именах пользователей символов, отсутствующих в списке.<br /><br />
+Чтобы разрешить использование только цифр и букв, используйте комбинацию: <b>a-zA-Z0-9а-яА-Я</b>]]></conf_description>
+      <conf_group>29</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>username_characters</conf_key>
+      <conf_default/>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>1</conf_position>
+      <conf_start_group>Настройки имен пользователей</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>displaynamesettings</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Отображаемое сообщение об ошибке</conf_title>
+      <conf_description><![CDATA[Если вы указали список символов в именах пользователей, и пользователь при регистрации пытается использовать запрещенные символу, данное сообщение об ошибке будет отображено.<br /><b>Совет:</b> Вы можете использовать {chars}, чтобы отобразить разрешенные символы.]]></conf_description>
+      <conf_group>29</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>username_errormsg</conf_key>
+      <conf_default>Имя может содержать только следующие символы: {chars}</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>2</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>displaynamesettings</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Запретить переводы строк в именах?</conf_title>
+      <conf_description>Запрет переводов строк и html тегов в именах пользователя и отображаемых именах.</conf_description>
+      <conf_group>29</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>usernames_nobr</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>3</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>displaynamesettings</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Разрешить «Отображаемое имя»</conf_title>
+      <conf_description>Если опция включена, пользователи могут ввести «Отображаемое имя», отличное от «Имени пользователя» (для авторизации). Данная функция НЕОБХОДИМА для внешних методов аутентификации.</conf_description>
+      <conf_group>29</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>auth_allow_dnames</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>4</conf_position>
+      <conf_start_group>Настройки отображаемых имен</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>displaynamesettings</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Максимальная длина отображаемого имени</conf_title>
+      <conf_description>Максимальное количество символов, допустимое в отображаемом имени.</conf_description>
+      <conf_group>29</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>max_user_name_length</conf_key>
+      <conf_default>26</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>5</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>displaynamesettings</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Запретить «Отображаемые имена», совпадающие с существующими «Именами пользователей»</conf_title>
+      <conf_description>Если опция включена, пользователи не могут выбирать «Отображаемое имя», совпадающее с другим «Отображаемым именем» ИЛИ другим «Именем пользователя». Если опция отключена, пользователи не cмогут выбирать только «Отображаемое имя», совпадающее с другим «Отображаемым именем».</conf_description>
+      <conf_group>29</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>auth_dnames_nologinname</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>6</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>displaynamesettings</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_is_title>1</conf_is_title>
+      <conf_title_keyword>userprofiles</conf_title_keyword>
+      <conf_title_title>Профили пользователей</conf_title_title>
+      <conf_title_desc>Данный раздел позволяет настроить глобальные права пользователей и другие опции.</conf_title_desc>
+      <conf_title_tab>Members</conf_title_tab>
+      <conf_title_app>members</conf_title_app>
+      <conf_title_noshow>0</conf_title_noshow>
+    </setting>
+    <setting>
+      <conf_title>Количество сообщений, необходимых набрать пользователю, чтобы получить возможность изменять свое звание?</conf_title>
+      <conf_description>Введите 0, чтобы запретить пользователям когда-либо изменять свое звание.</conf_description>
+      <conf_group>30</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>post_titlechange</conf_key>
+      <conf_default>500</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>1</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>userprofiles</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title><![CDATA[Включить функцию &quot;дружбы&quot; между пользователями]]></conf_title>
+      <conf_description/>
+      <conf_group>30</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>friends_enabled</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>2</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>userprofiles</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Позволить пользователям оценивать друг друга?</conf_title>
+      <conf_description/>
+      <conf_group>30</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>pp_allow_member_rate</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>3</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>userprofiles</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Время жизни запросов на восстановление пароля</conf_title>
+      <conf_description>Сколько дней считать запрос на восстановление пароля действительным</conf_description>
+      <conf_group>30</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>lost_pw_prune</conf_key>
+      <conf_default>60</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>4</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>userprofiles</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Максимальная ширина фотографии пользователя на странице темы</conf_title>
+      <conf_description>Если 0 или пустое значение, то будет использовано изображение с размерами 100x100.</conf_description>
+      <conf_group>30</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>member_topic_avatar_max</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>5</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>userprofiles</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Разрешить анимированные GIF в мини-каритинках профиля?</conf_title>
+      <conf_description>При включении анимация будет работать для мини-картинок профилей на главной странице форума и списке тем. Картинки на странице профиля анимируются всегда.</conf_description>
+      <conf_group>30</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>member_photo_gif_animate</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>5</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>userprofiles</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Разрешить использовать граватары?</conf_title>
+      <conf_description><![CDATA[<a href='http://en.gravatar.com/' target='_blank'>Перейдите по ссылке, чтобы узнать, что такое граватар</a>.]]></conf_description>
+      <conf_group>30</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>allow_gravatars</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>5</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>userprofiles</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Разрешить пользователям загружать фотографии через указание URL</conf_title>
+      <conf_description>Если пользователь имеет право загружать фотографию и включена эта опция, то он сможет указать URL фотографии для загрузки ее на форум.</conf_description>
+      <conf_group>30</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>mem_photo_url</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>5</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>userprofiles</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Разрешенные расширения файлов для фотографий</conf_title>
+      <conf_description>Разделяйте допустимые расширения файлов запятыми (gif,png,jpeg) и т.д.</conf_description>
+      <conf_group>30</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>photo_ext</conf_key>
+      <conf_default>gif,jpg,jpeg,png</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>6</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>userprofiles</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title><![CDATA[Автоматически удалять подписку на тему, если в ней нет ответов более [x] дней]]></conf_title>
+      <conf_description>Чтобы запретить автоматическое удаление, оставьте это поле пустым или введите 0</conf_description>
+      <conf_group>30</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>subs_autoprune</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>8</conf_position>
+      <conf_start_group>Подписки на тему и форум</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>userprofiles</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Автоматически подписывать на каждый форум</conf_title>
+      <conf_description><![CDATA[Укажите группы, пользователи в которых будут автоматически получать уведомления обо всех новых темах (а не ответах) во всех доступных им форумах. Это означает, что пользователи, выбранные в первоначальную группу, будут получать электронные сообщения каждый раз, когда создается новая тема, а их нет на форуме.<br /><b>Примечание:</b> Электронные письма будут отправлены только тем, кто выбрал опцию 'Получать письма от администраторов'.]]></conf_description>
+      <conf_group>30</conf_group>
+      <conf_type>multi</conf_type>
+      <conf_key>autoforum_sub_groups</conf_key>
+      <conf_default/>
+      <conf_extra>#show_groups#</conf_extra>
+      <conf_evalphp><![CDATA[if ( $save == 1)
+{
+	if ( is_array($_POST['autoforum_sub_groups']) )
+	{
+		$_POST['autoforum_sub_groups'] = implode(",",$_POST['autoforum_sub_groups']);
+	}
+	else
+	{
+		$_POST['autoforum_sub_groups'] = "";
+	}
+	
+	$key = 'autoforum_sub_groups';
+}
+if ( $show == 1 )
+{
+    $key='autoforum_sub_groups[]';
+}]]></conf_evalphp>
+      <conf_protected>1</conf_protected>
+      <conf_position>9</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>userprofiles</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Настройки подписки для новых пользователей</conf_title>
+      <conf_description/>
+      <conf_group>30</conf_group>
+      <conf_type>dropdown</conf_type>
+      <conf_key>auto_track_method</conf_key>
+      <conf_default/>
+      <conf_extra><![CDATA[0=Не подписываться автоматически&#13;
+none=Подписываться без уведомлений&#13;
+immediate=Подписываться с неотложными уведомлениями&#13;=Delayed email notifications
+offline=Подписываться с отложенными уведомлениями&#13;
+daily=Подписываться с ежедневным дайжестом&#13;
+weekly=Подписываться с еженедельным дайжестом]]></conf_extra>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>10</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>userprofiles</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Разрешить гостям видеть подписи?</conf_title>
+      <conf_description/>
+      <conf_group>30</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>guests_sig</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>11</conf_position>
+      <conf_start_group>Настройки для гостей</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>userprofiles</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Сколько времени хранить уведомления пользователей</conf_title>
+      <conf_description>Укажите сколько по времени (в месяцах) хранить уведомления пользователей</conf_description>
+      <conf_group>30</conf_group>
+      <conf_type>dropdown</conf_type>
+      <conf_key>prune_notifications</conf_key>
+      <conf_default>3</conf_default>
+      <conf_extra>3=3 месяца
+6=6 месяцев
+9=9 месяцев
+12=12 месяцев</conf_extra>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>12</conf_position>
+      <conf_start_group>Уведомления</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>userprofiles</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_is_title>1</conf_is_title>
+      <conf_title_keyword>spamservice</conf_title_keyword>
+      <conf_title_title>Сервис мониторинга спама</conf_title_title>
+      <conf_title_desc>Настройки для антиспам сервиса от IBR</conf_title_desc>
+      <conf_title_tab>Members</conf_title_tab>
+      <conf_title_app>members</conf_title_app>
+      <conf_title_noshow>0</conf_title_noshow>
+    </setting>
+    <setting>
+      <conf_title>Включить работу с сервисом?</conf_title>
+      <conf_description/>
+      <conf_group>31</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>spam_service_enabled</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>1</conf_position>
+      <conf_start_group>Базовые настройки</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>spamservice</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Ключ для работы с сервисом</conf_title>
+      <conf_description>Получить ключ вы можете в клиент-центре.</conf_description>
+      <conf_group>31</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>spam_service_api_key</conf_key>
+      <conf_default/>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>2</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>spamservice</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Сообщать сервису о пометке пользователя спамером?</conf_title>
+      <conf_description>Включение данной опции позволит отправлять информацию о пометке пользователя как спамера на сервис антиспама.</conf_description>
+      <conf_group>31</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>spam_service_send_to_ips</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>2</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>spamservice</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Лимит времени соединения с сервисом</conf_title>
+      <conf_description>В течение указанного времени (в секундах) форум будет ждать ответа от сервиса при соединении с ним.</conf_description>
+      <conf_group>31</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>spam_service_timeout</conf_key>
+      <conf_default>15</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>3</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>spamservice</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Действие в случае истечения лимита времени на соединение с сервисом</conf_title>
+      <conf_description/>
+      <conf_group>31</conf_group>
+      <conf_type>dropdown</conf_type>
+      <conf_key>spam_service_action_timeout</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra><![CDATA[1=Продолжить регистрацию&#13;
+2=Пометить пользователя как нуждающегося в проверке администратором&#13;
+3=Зарегистрировать пользователя и сразу забанить]]></conf_extra>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>4</conf_position>
+      <conf_start_group>Взаимодействие с сервисом</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>spamservice</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Действие для код-ответа 0</conf_title>
+      <conf_description>Код-ответа 0 означает, что сервис не смог правильно обработать запрос по каким-то техническим причинам.</conf_description>
+      <conf_group>31</conf_group>
+      <conf_type>dropdown</conf_type>
+      <conf_key>spam_service_action_0</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra><![CDATA[1=Продолжить регистрацию&#13;
+2=Пометить пользователя как нуждающегося в проверке администратором&#13;
+3=Зарегистрировать пользователя и сразу забанить]]></conf_extra>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>5</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>spamservice</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Действие для код-ответа 1</conf_title>
+      <conf_description>Код-ответа 1 высылается сервисом в случае, если регистрирующийся пользователь не может быть спамером.</conf_description>
+      <conf_group>31</conf_group>
+      <conf_type>dropdown</conf_type>
+      <conf_key>spam_service_action_1</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra><![CDATA[1=Продолжить регистрацию&#13;
+2=Пометить пользователя как нуждающегося в проверке администратором&#13;
+3=Зарегистрировать пользователя и сразу забанить]]></conf_extra>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>6</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>spamservice</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Действие для код-ответа 2</conf_title>
+      <conf_description>Код-ответа 2 высылается сервисом в случае, если регистрирующийся пользователь может-быть вероятным спамером</conf_description>
+      <conf_group>31</conf_group>
+      <conf_type>dropdown</conf_type>
+      <conf_key>spam_service_action_2</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra><![CDATA[1=Продолжить регистрацию&#13;
+2=Пометить пользователя как нуждающегося в проверке администратором&#13;
+3=Зарегистрировать пользователя и сразу забанить]]></conf_extra>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>7</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>spamservice</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Действие для код-ответа 3</conf_title>
+      <conf_description>Код-ответа 3 высылается сервисом в случае, если регистрирующийся пользователь может быть спамером</conf_description>
+      <conf_group>31</conf_group>
+      <conf_type>dropdown</conf_type>
+      <conf_key>spam_service_action_3</conf_key>
+      <conf_default>2</conf_default>
+      <conf_extra><![CDATA[1=Продолжить регистрацию&#13;
+2=Пометить пользователя как нуждающегося в проверке администратором&#13;
+3=Зарегистрировать пользователя и сразу забанить]]></conf_extra>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>8</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>spamservice</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Действие для код-ответа 4</conf_title>
+      <conf_description>Код-ответа 4 высылается сервисом в случае, если регистрирующийся пользователь спамер</conf_description>
+      <conf_group>31</conf_group>
+      <conf_type>dropdown</conf_type>
+      <conf_key>spam_service_action_4</conf_key>
+      <conf_default>3</conf_default>
+      <conf_extra><![CDATA[1=Продолжить регистрацию&#13;
+2=Пометить пользователя как нуждающегося в проверке администратором&#13;
+3=Зарегистрировать пользователя и сразу забанить]]></conf_extra>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>9</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>spamservice</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Уведомлять при появлении нового спамера?</conf_title>
+      <conf_description>Включение опции позволяет уведомлять администрацию, если какой-либо пользователь был отмечен как спамер.</conf_description>
+      <conf_group>31</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>spm_notify</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>10</conf_position>
+      <conf_start_group>Автоматическая работа со спамерам</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>spamservice</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>При отметке пользователя спамером производить действия</conf_title>
+      <conf_description/>
+      <conf_group>31</conf_group>
+      <conf_type>dropdown</conf_type>
+      <conf_key>spm_option</conf_key>
+      <conf_default>disable</conf_default>
+      <conf_extra><![CDATA[none=Бездействовать&#13;
+disable=Отключить возможность отправки сообщений/личных сообщений&#13;
+unapprove=Отключить возможность отправки сообщений/личных сообщений и скрыть сообщения&#13;
+ban=Скрыть сообщения, очистить профиль и заблокировать запись]]></conf_extra>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>11</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>spamservice</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Скрывать сообщения за X дней при отметке пользователя спамером</conf_title>
+      <conf_description>В значении опции необходимо указать количество дней, за которые сообщения от пользователя, помеченного как спамер, будут скрыты. Например, если указать 3 дня, то при отметке пользователя спамером, все его сообщения за предыдущие 3 дня будут скрыты. 
+      Вы можете ввести значение 0, тогда все сообщения пользователя будут скрыты.</conf_description>
+      <conf_group>31</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>spm_post_days</conf_key>
+      <conf_default>3</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>12</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>spamservice</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Механизм генерации Captcha</conf_title>
+      <conf_description>Можно выбрать использование стороннего сервиса reCAPTHCHA или же использовать GD библиотеку.</conf_description>
+      <conf_group>31</conf_group>
+      <conf_type>dropdown</conf_type>
+      <conf_key>bot_antispam_type</conf_key>
+      <conf_default>recaptcha</conf_default>
+      <conf_extra><![CDATA[none=Нет&#13;
+recaptcha=reCAPTCHA&#13;
+default=С использованием GD]]></conf_extra>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>13</conf_position>
+      <conf_start_group>CAPTCHA</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>spamservice</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Включить Captcha при отправке сообщений гостями?</conf_title>
+      <conf_description>При включенной опции, гостям необходимо будет пройти CAPTCHA тест, при попытке добавления темы или сообщения.</conf_description>
+      <conf_group>31</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>guest_captcha</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>14</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>spamservice</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Публичный ключ (Public Key)</conf_title>
+      <conf_description><![CDATA[<a href='http://www.recaptcha.net'>Получить ключ</a>]]></conf_description>
+      <conf_group>31</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>recaptcha_public_key</conf_key>
+      <conf_default>6LcpWAMAAAAAAA4klDtDNuDH6LsGgBX5mBoJ3naK</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>15</conf_position>
+      <conf_start_group>Настройки reCAPTCHA</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>recaptcha, captcha</conf_keywords>
+      <conf_title_keyword>spamservice</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Приватный ключ (Private Key)</conf_title>
+      <conf_description><![CDATA[<a href='http://www.recaptcha.net'>Получить ключ</a>]]></conf_description>
+      <conf_group>31</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>recaptcha_private_key</conf_key>
+      <conf_default>6LcpWAMAAAAAAETX5jHd9NlPtIHJA4G-ra3X2RQB</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>16</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>recaptcha, captcha</conf_keywords>
+      <conf_title_keyword>spamservice</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Язык интерфейса</conf_title>
+      <conf_description/>
+      <conf_group>31</conf_group>
+      <conf_type>dropdown</conf_type>
+      <conf_key>recaptcha_language</conf_key>
+      <conf_default>ru</conf_default>
+      <conf_extra>en=English&#13;
+nl=Dutch&#13;
+fr=French&#13;
+de=German&#13;
+pt=Portuguese&#13;
+ru=Русский&#13;
+es=Spanish&#13;
+tr=Turkish</conf_extra>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>17</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>recaptcha</conf_keywords>
+      <conf_title_keyword>spamservice</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Оформление</conf_title>
+      <conf_description>Вы можете выбрать одну из стандартных тем, которая будет использоваться для оформления формы вывода reCAPTCHA.</conf_description>
+      <conf_group>31</conf_group>
+      <conf_type>dropdown</conf_type>
+      <conf_key>recaptcha_theme</conf_key>
+      <conf_default>clean</conf_default>
+      <conf_extra>clean=Clean&#13;
+red=Red&#13;
+white=White&#13;
+blackglass=Blackglass</conf_extra>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>18</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>spamservice</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+  </settinggroup>
+</settingexport>

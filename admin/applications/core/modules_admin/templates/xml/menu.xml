@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menu>
+	<tabitems>
+		<item>
+			<title>Управление стилями</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Управление стилями</subitemtitle>
+					<subitemlang>skins_manage</subitemlang>
+					<subsection>skinsets</subsection>
+					<subitemurl>do=overview</subitemurl>
+					<subitemrolekey>settemplates_manage</subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>
+			</subitems>
+		</item>
+		<item>
+			<title>Инструменты стилей</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Инструменты стилей</subitemtitle>
+					<subitemlang>skins_tools</subitemlang>
+					<subsection>tools</subsection>
+					<subitemurl>do=splash</subitemurl>
+					<subitemrolekey>template_tools</subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>
+				</subitems>
+		</item>
+		<item>
+			<title>Сравнение стилей</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Сравнение</subitemtitle>
+					<subitemlang>skins_merge</subitemlang>
+					<subsection>skindiff</subsection>
+					<subitemurl>do=overview</subitemurl>
+					<subitemrolekey>skindiff_reports</subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>
+				</subitems>
+		</item>
+		<item>
+			<title>Поиск и замена</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Поиск и замена</subitemtitle>
+					<subitemlang>skins_sar</subitemlang>
+					<subsection>searchandreplace</subsection>
+					<subitemurl>do=showform</subitemurl>
+					<subitemrolekey>templates_manage</subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>
+				</subitems>
+		</item>
+		<item>
+			<title>Смена логотипа</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Смена логотипа</subitemtitle>
+					<subitemlang>skins_logo</subitemlang>
+					<subsection>easylogo</subsection>
+					<subitemurl></subitemurl>
+					<subitemrolekey>easy_logo</subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>
+				</subitems>
+		</item>
+		<item>
+			<title>Импорт / Экспорт</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Импорт / Экспорт</subitemtitle>
+					<subitemlang>skins_ie</subitemlang>
+					<subsection>importexport</subsection>
+					<subitemurl>do=overview</subitemurl>
+					<subitemrolekey>settemplates_export</subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>
+			</subitems>
+		</item>
+		<item>
+			<title>Внешнее редактирование</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Внешнее редактирование</subitemtitle>
+					<subitemlang>skins_external</subitemlang>
+					<subsection>external</subsection>
+					<subitemurl>do=overview</subitemurl>
+					<subitemrolekey>settemplates_external</subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>
+			</subitems>
+		</item>
+	</tabitems>
+</menu>

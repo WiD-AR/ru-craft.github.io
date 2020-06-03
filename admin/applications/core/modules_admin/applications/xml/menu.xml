@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menu>
+	<tabitems>
+		<item>
+			<title>Управление модулями</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Список модулей</subitemtitle>
+					<subitemlang>manage_apps_modules</subitemlang>
+					<subsection>applications</subsection>
+					<subitemurl>do=applications_overview</subitemurl>
+					<subitemrolekey>app_manage</subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>
+			</subitems>
+		</item>
+		
+<item>
+			<title>Управление хуками (hooks)</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Список хуков</subitemtitle>
+					<subitemlang>manage_hooks</subitemlang>
+					<subsection>hooks</subsection>
+					<subitemurl>do=hooks_overview</subitemurl>
+					<subitemrolekey>hooks_manage</subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>				
+			</subitems>
+		</item>
+	</tabitems>
+</menu>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menu>
+	<tabitems>
+		<item>
+			<title>Смайлики</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Управление смайликами</subitemtitle>
+					<subitemlang>emoticons</subitemlang>
+					<subsection>emoticons</subsection>
+					<subitemurl>do=overview</subitemurl>
+					<subitemrolekey>emoticons_manage</subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>
+			</subitems>
+		</item>
+		<item>
+			<title>BB-коды</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Управление BB-кодами</subitemtitle>
+					<subitemlang>bbcode</subitemlang>
+					<subsection>bbcode</subsection>
+					<subitemurl>do=overview</subitemurl>
+					<subitemrolekey>bbcode_manage</subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>	
+				</subitems>
+		</item>
+		<item>
+			<title>Управление медиа-кодами</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Медиа BB-коды</subitemtitle>
+					<subitemlang>mediatag</subitemlang>
+					<subsection>media</subsection>
+					<subitemurl>do=overview</subitemurl>
+					<subitemrolekey>media_manage</subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>				
+			</subitems>
+		</item>
+		<item>
+			<title>Нецензурные слова</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Управление нецензурными словами</subitemtitle>
+					<subitemlang>badwords</subitemlang>
+					<subsection>badwords</subsection>
+					<subitemurl>do=overview</subitemurl>
+					<subitemrolekey>badword_manage</subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>				
+			</subitems>
+		</item>
+	</tabitems>
+</menu>

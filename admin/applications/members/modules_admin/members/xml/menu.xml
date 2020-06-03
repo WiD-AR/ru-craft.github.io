@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menu>
+	<tabitems>
+		<item>
+			<title>Управление пользователями</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Управление пользователями</subitemtitle>
+					<subitemlang>manage_members</subitemlang>
+					<subsection>members</subsection>
+					<subitemurl>do=members_overview</subitemurl>
+					<subitemrolekey></subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>
+			</subitems>
+		</item>
+
+		<item>
+			<title>Звания</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Управление званиями пользователей</subitemtitle>
+					<subitemlang>mem_ranks</subitemlang>
+					<subsection>ranks</subsection>
+					<subitemurl>do=ranks_overview</subitemurl>
+					<subitemrolekey>ranks_add</subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>			
+			</subitems>
+		</item>
+		
+		<item>
+			<title>Репутация</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Управление репутацией пользователей</subitemtitle>
+					<subitemlang>mem_rep</subitemlang>
+					<subsection>reputation</subsection>
+					<subitemurl>do=overview</subitemurl>
+					<subitemrolekey>reps_manage</subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>
+			</subitems>
+		</item>		
+		
+		<item>
+			<title>Дополнительные поля</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Управление дополнительными полями профиля</subitemtitle>
+					<subitemlang>mem_tools</subitemlang>
+					<subsection>tools</subsection>
+					<subitemurl></subitemurl>
+					<subitemrolekey>membertools_ip</subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>			
+			</subitems>
+		</item>
+	
+		<item>
+			<title>Добавление пользователя</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Добавление пользователя</subitemtitle>
+					<subitemlang>mem_add</subitemlang>
+					<subsection>members</subsection>
+					<subitemurl>do=add</subitemurl>
+					<subitemrolekey>member_add</subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>				
+			</subitems>
+		</item>	
+		
+		<item>
+			<title>Бан фильтры</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Управление бан фильтрами</subitemtitle>
+					<subitemlang>banfilters</subitemlang>
+					<subsection>banfilters</subsection>
+					<subitemurl></subitemurl>
+					<subitemrolekey>ban_manage</subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>				
+			</subitems>
+		</item>
+
+		<item>
+			<title>Настройки уведомлений</title>
+			<subitems>
+				<subitem>
+					<subitemtitle>Настройки уведомлений</subitemtitle>
+					<subitemlang>notifications</subitemlang>
+					<subsection>notifications</subsection>
+					<subitemurl></subitemurl>
+					<subitemrolekey>configure_notifications</subitemrolekey>
+					<subisredirect>0</subisredirect>
+				</subitem>				
+			</subitems>
+		</item>
+	</tabitems>
+</menu>

@@ -1,0 +1,3831 @@
+<?xml version="1.0" encoding="utf-8"?>
+<settingexport>
+  <settinggroup>
+    <setting>
+      <conf_is_title>1</conf_is_title>
+      <conf_title_keyword>mobile_hidden</conf_title_keyword>
+      <conf_title_title>Hidden Mobile Settings</conf_title_title>
+      <conf_title_desc/>
+      <conf_title_tab>System</conf_title_tab>
+      <conf_title_app>core</conf_title_app>
+      <conf_title_noshow>1</conf_title_noshow>
+    </setting>
+    <setting>
+      <conf_title>Время последнего изменения шаблонов</conf_title>
+      <conf_description/>
+      <conf_group>32</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>style_last_updated</conf_key>
+      <conf_default/>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>1</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>mobile_hidden</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_is_title>1</conf_is_title>
+      <conf_title_keyword>externaledit</conf_title_keyword>
+      <conf_title_title>IP.Board External Edit (WebDav)</conf_title_title>
+      <conf_title_desc/>
+      <conf_title_tab/>
+      <conf_title_app>core</conf_title_app>
+      <conf_title_noshow>1</conf_title_noshow>
+    </setting>
+    <setting>
+      <conf_title>Включить WebDav</conf_title>
+      <conf_description>Разрешить внешнее редактирование стилей</conf_description>
+      <conf_group>1</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>webdav_on</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>1</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>externaledit</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_is_title>1</conf_is_title>
+      <conf_title_keyword>ipboardlicensekey</conf_title_keyword>
+      <conf_title_title>IP.Board License Key</conf_title_title>
+      <conf_title_desc/>
+      <conf_title_tab>System</conf_title_tab>
+      <conf_title_app>core</conf_title_app>
+      <conf_title_noshow>1</conf_title_noshow>
+    </setting>
+    <setting>
+      <conf_title>Регистрационный ключ</conf_title>
+      <conf_description><![CDATA[Это регистрационный ключ IP.Board, а не ваш код клиента или пароль  для входа в клиент-центр. 
+
+Ключ вы получаете вместе с письмом об активации вашей покупки IP.Board.
+
+<br />НЕ УДАЛЯЙТЕ ИЛИ РЕДАКТИРУЙТЕ ДАННЫЙ КЛЮЧ, ЕСЛИ ВЫ НЕ УВЕРЕНЫ В СВОИХ ДЕЙСТВИЯХ!]]></conf_description>
+      <conf_group>2</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>ipb_reg_number</conf_key>
+      <conf_default/>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>1</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>ipboardlicensekey</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_is_title>1</conf_is_title>
+      <conf_title_keyword>iphoneappsettings</conf_title_keyword>
+      <conf_title_title>iPhone App</conf_title_title>
+      <conf_title_desc>Settings for the iPhone application</conf_title_desc>
+      <conf_title_tab>IPS Apps</conf_title_tab>
+      <conf_title_app>core</conf_title_app>
+      <conf_title_noshow>0</conf_title_noshow>
+    </setting>
+    <setting>
+      <conf_title>Включить уведомления</conf_title>
+      <conf_description>Mobile notifications require an active support license</conf_description>
+      <conf_group>3</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>iphone_notifications_enabled</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>1</conf_position>
+      <conf_start_group>Mobile Notifications</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>iphoneappsettings</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Группы</conf_title>
+      <conf_description>Select which groups can receive mobile notifications, not selecting any will cause notifications to be enabled for all groups.</conf_description>
+      <conf_group>3</conf_group>
+      <conf_type>multi</conf_type>
+      <conf_key>iphone_notifications_groups</conf_key>
+      <conf_default/>
+      <conf_extra>#show_groups#</conf_extra>
+      <conf_evalphp><![CDATA[if ( $save == 1)
+{
+	if ( is_array($_POST['iphone_notifications_groups']) )
+	{
+		$_POST['iphone_notifications_groups'] = implode(",",$_POST['iphone_notifications_groups']);
+	}
+	else
+	{
+		$_POST['iphone_notifications_groups'] = "";
+	}
+	
+	$key = 'iphone_notifications_groups';
+}
+if ( $show == 1 )
+{
+$key = 'iphone_notifications_groups[]';
+}]]></conf_evalphp>
+      <conf_protected>1</conf_protected>
+      <conf_position>2</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>iphoneappsettings</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_is_title>1</conf_is_title>
+      <conf_title_keyword>general</conf_title_keyword>
+      <conf_title_title>Глобальные настройки</conf_title_title>
+      <conf_title_desc>Группа опций, отвечающих за настройку базовых параметров форума, таких как пути загрузки файлов, URL форума и сайта.</conf_title_desc>
+      <conf_title_tab>System</conf_title_tab>
+      <conf_title_app>core</conf_title_app>
+      <conf_title_noshow>0</conf_title_noshow>
+    </setting>
+    <setting>
+      <conf_title>Название форума</conf_title>
+      <conf_description>Используется в навигационном меню, заголовке страницы, письмах с форума.</conf_description>
+      <conf_group>4</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>board_name</conf_key>
+      <conf_default>Invision Power Board</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>1</conf_position>
+      <conf_start_group>Названия и адреса</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>general</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Мета тег: image_src</conf_title>
+      <conf_description>Facebook используют данный тег при публикации и/или синхронизации содержимого. Максимальные размеры изображения 130px x 110px. Макрос {style_image_url} может использоваться для указания URL до директории изображений стиля.</conf_description>
+      <conf_group>4</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>meta_imagesrc</conf_key>
+      <conf_default>{style_image_url}/meta_image.png</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>2</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>general</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Название сайта</conf_title>
+      <conf_description>Показывается в навигационном меню форума.</conf_description>
+      <conf_group>4</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>home_name</conf_key>
+      <conf_default/>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>3</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>general</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Адрес сайта</conf_title>
+      <conf_description/>
+      <conf_group>4</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>home_url</conf_key>
+      <conf_default/>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>4</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>general</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Action формы загрузок</conf_title>
+      <conf_description><![CDATA[<b>Необязательно для заполнения</b>
+<br />Опция позволяет переопределить значение домена в action формы загрузок.  Данная настройка может быть полезна для форумов, работающих на нескольких серверах, в целях распределения нагрузки.<br />
+Пример значения поля: http://master.mysite.ru/forums]]></conf_description>
+      <conf_group>4</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>upload_domain</conf_key>
+      <conf_default/>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>5</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>general</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Путь до директории загрузок</conf_title>
+      <conf_description><![CDATA[Вводите абсолютный (полный) путь до директории загрузок "uploads". Важно понимать, что это не URL.
+<!--SUGGEST-->]]></conf_description>
+      <conf_group>4</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>upload_dir</conf_key>
+      <conf_default/>
+      <conf_extra>upload_dir</conf_extra>
+      <conf_evalphp><![CDATA[if( $show == 1 )
+{
+	$this_script = str_replace( '&#092;&#092;&#092;&#092;', '/', getenv( 'SCRIPT_FILENAME' ) );
+ 	
+	if( $this_script )
+	{
+		$this_script = str_replace( '/'.CP_DIRECTORY.'/index.php', '/uploads', $this_script );
+ 		$r['conf_description'] = str_replace( "<!--SUGGEST-->", "<br />IP.Board определил следующий путь к директории загрузок: <strong>".$this_script . '</strong>', $r['conf_description'] );
+	}
+}]]></conf_evalphp>
+      <conf_protected>1</conf_protected>
+      <conf_position>6</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>general</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>URL к директории загрузок</conf_title>
+      <conf_description><![CDATA[URL адрес, ведущий к вашей директории "uploads".
+<!--SUGGEST-->]]></conf_description>
+      <conf_group>4</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>upload_url</conf_key>
+      <conf_default/>
+      <conf_extra/>
+      <conf_evalphp><![CDATA[if( $show == 1 )
+{
+	$this_host   = getenv( 'SERVER_NAME' );
+	$this_script = getenv( 'SCRIPT_NAME' );
+	$this_script = str_replace( "&#092;&#092;&#092;&#092;", "/", $this_script );
+
+	if( $this_host AND $this_script )
+	{
+		$this_script = str_replace( '/'.CP_DIRECTORY.'/index.php', '/uploads', $this_script );
+		$r['conf_description'] = str_replace( "<!--SUGGEST-->", "<br />IP.Board определил URL к директории загрузок так: <strong>http://".$this_host.$this_script . '</strong>', $r['conf_description'] );
+	}
+}]]></conf_evalphp>
+      <conf_protected>1</conf_protected>
+      <conf_position>7</conf_position>
+      <conf_start_group>Пути и адреса форума</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>general</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Путь до директории кеша</conf_title>
+      <conf_description><![CDATA[<b>Необязательно для заполнения</b>
+<br />Опция позволяет определить путь до директории, где расположены поддиректории skin_cache, style_avatars, style_emoticons, style_images. Данная настройка может быть полезна для форумов, работающих на нескольких серверах, в целях распределения нагрузки.<br />
+Пример значения поля: /home/srv/clustered_data/forums/
+]]></conf_description>
+      <conf_group>4</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>ipb_cache_path</conf_key>
+      <conf_default/>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>8</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>general</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>URL к директории кеша</conf_title>
+      <conf_description><![CDATA[<b>Необязательно для заполнения</b>
+    <br />
+    Если вы изменили «Путь до директории кеша», необходимо также указать и URL до него.]]></conf_description>
+      <conf_group>4</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>ipb_cache_url</conf_key>
+      <conf_default/>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>9</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>general</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Сжать javascript?</conf_title>
+      <conf_description><![CDATA[Вы можете включить сжатие javascript и CSS для уменьшения HTTP запросов к серверу.<br />
+Опция не работает, если включена загрузка javascript из Google.]]></conf_description>
+      <conf_group>4</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>use_minify</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>10</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>minify, reduce, compress, javascript</conf_keywords>
+      <conf_title_keyword>general</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>URL к директории изображений</conf_title>
+      <conf_description><![CDATA[<b>Необязательно для заполнения</b>
+<br />URL адрес, ведущий к изображениям, используемым в стиле форума (style_images). Данная настройка может быть полезна для форумов, работающих на нескольких серверах, в целях распределения нагрузки.<br />
+Пример заполнения поля: http://img.domain.ru/forums/]]></conf_description>
+      <conf_group>4</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>ipb_img_url</conf_key>
+      <conf_default/>
+      <conf_extra/>
+      <conf_evalphp><![CDATA[if( $save == 1 && $value )
+{
+		/* Flag skins for recache */
+		require_once( IPS_ROOT_PATH . 'sources/classes/skins/skinFunctions.php' );
+		require_once( IPS_ROOT_PATH . 'sources/classes/skins/skinCaching.php' );
+		$skinCaching	= new skinCaching( $this->registry );
+		
+		/* Flag all for recache */
+		$skinCaching->flagSetForRecache();
+}]]></conf_evalphp>
+      <conf_protected>1</conf_protected>
+      <conf_position>11</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>general</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>CSS URL</conf_title>
+      <conf_description><![CDATA[<b>Необязательно для заполнения</b>
+<br />Опция может быть использована при необходимости указания сервера где расположены CSS файлы, например CDN. Убедитесь что вы верно указали адрес к CSS (http(s) и слэш) ]]></conf_description>
+      <conf_group>4</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>ipb_css_url</conf_key>
+      <conf_default/>
+      <conf_extra/>
+      <conf_evalphp><![CDATA[if( $save == 1 && $value )
+{
+		/* Flag skins for recache */
+		require_once( IPS_ROOT_PATH . 'sources/classes/skins/skinFunctions.php' );
+		require_once( IPS_ROOT_PATH . 'sources/classes/skins/skinCaching.php' );
+		$skinCaching	= new skinCaching( $this->registry );
+		
+		/* Flag all for recache */
+		$skinCaching->flagSetForRecache();
+}]]></conf_evalphp>
+      <conf_protected>1</conf_protected>
+      <conf_position>12</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>general</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Javascript URL</conf_title>
+      <conf_description><![CDATA[<b>Необязательно для заполнения</b>
+<br />Опция может быть использована при необходимости указания сервера где расположены JavaScript файлы, например CDN. Убедитесь что вы верно указали адрес к CSS (http(s) и слэш) ]]></conf_description>
+      <conf_group>4</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>ipb_js_url</conf_key>
+      <conf_default/>
+      <conf_extra/>
+      <conf_evalphp><![CDATA[if( $save == 1 && $value )
+{
+		/* Flag skins for recache */
+		require_once( IPS_ROOT_PATH . 'sources/classes/skins/skinFunctions.php' );
+		require_once( IPS_ROOT_PATH . 'sources/classes/skins/skinCaching.php' );
+		$skinCaching	= new skinCaching( $this->registry );
+		
+		/* Flag all for recache */
+		$skinCaching->flagSetForRecache();
+}]]></conf_evalphp>
+      <conf_protected>1</conf_protected>
+      <conf_position>13</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>general</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Режим отладки</conf_title>
+      <conf_description>Опция позволяет настроить детальность информации, выводимой внизу страниц форума</conf_description>
+      <conf_group>4</conf_group>
+      <conf_type>dropdown</conf_type>
+      <conf_key>debug_level</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra><![CDATA[0=0: Отключен&#13;
+1=1: Выводить уровень загрузки сервера, время генерации страницы и число запросов&#13;
+2=2: Выводить информацию уровня 1 плюс данные из GET и POST&#13;
+3=3: Выводить информацию уровня 2 плюс запросы к базе данных]]></conf_extra>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>14</conf_position>
+      <conf_start_group>Прочие настройки</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>general</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title><![CDATA[&quot;Название&quot; владельца лицензии]]></conf_title>
+      <conf_description><![CDATA[Это имя будет выведено в&nbsp;строке &laquo;Лицензия зарегистрирована на:&raquo; <br />Например: <em>Иван&nbsp;Иванов</em>,&nbsp;<em>IBResource</em>]]></conf_description>
+      <conf_group>4</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>ipb_reg_name</conf_key>
+      <conf_default/>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>15</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>general</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Убрать ссылку на форум из навигации</conf_title>
+      <conf_description><![CDATA[Если пользователь находится в приложении, отличающемся от форума, ссылка на главную страницу форума будет убрана. 
+Например, до отключения опции навигация выглядит так:
+Invision Power Board> Список пользователей
+
+после - так:
+Список пользователей]]></conf_description>
+      <conf_group>4</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>remove_forums_nav</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>16</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>general</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_is_title>1</conf_is_title>
+      <conf_title_keyword>log_prune</conf_title_keyword>
+      <conf_title_title>Журналы действий</conf_title_title>
+      <conf_title_desc/>
+      <conf_title_tab>Advanced</conf_title_tab>
+      <conf_title_app>core</conf_title_app>
+      <conf_title_noshow>0</conf_title_noshow>
+    </setting>
+    <setting>
+      <conf_title>Антиспам-сервис</conf_title>
+      <conf_description>Желаете удалять старые записи из журнала работы с анти-спам сервисом (по умолчанию через 30 дней)</conf_description>
+      <conf_group>5</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>ipb_prune_spam</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>10</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>log_prune</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Посещения поисковых ботов</conf_title>
+      <conf_description>Желаете удалять старые записи из журнала посещений поисковых ботов (по умолчанию через 30 дней)?</conf_description>
+      <conf_group>5</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>ipb_prune_spider</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>10</conf_position>
+      <conf_start_group>Очистка журналов</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>log_prune</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Менеджер задач</conf_title>
+      <conf_description>Желаете удалять старые записи из журнала менеджера задач (по умолчанию через 30 дней)?</conf_description>
+      <conf_group>5</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>ipb_prune_task</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>20</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>log_prune</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Действия администраторов</conf_title>
+      <conf_description>Желаете удалять старые записи из журнала действий администраторов (по умолчанию через 30 дней)?</conf_description>
+      <conf_group>5</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>ipb_prune_admin</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>30</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>log_prune</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Действия модераторов</conf_title>
+      <conf_description>Желаете удалять старые записи из журнала действий модераторов (по умолчанию через 30 дней)?</conf_description>
+      <conf_group>5</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>ipb_prune_mod</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>40</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>log_prune</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>E-mail отправления</conf_title>
+      <conf_description>Желаете удалять старые записи из журнала e-mail отправлений (по умолчанию через 30 дней)?</conf_description>
+      <conf_group>5</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>ipb_prune_email</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>50</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>log_prune</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>E-mail ошибки</conf_title>
+      <conf_description>Желаете удалять старые записи из журнала e-mail ошибок (по умолчанию через 30 дней)??</conf_description>
+      <conf_group>5</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>ipb_prune_emailerror</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>60</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>log_prune</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>SQL ошибки</conf_title>
+      <conf_description>Желаете удалять старые записи из журнала SQL ошибок (по умолчанию через 30 дней)?</conf_description>
+      <conf_group>5</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>ipb_prune_sql</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>70</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>log_prune</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Попытки входа в админцентр</conf_title>
+      <conf_description>Желаете удалять старые записи из журнала попыток входа в админцентр (по умолчанию через 30 дней)?</conf_description>
+      <conf_group>5</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>prune_admin_login_logs</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>80</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>log_prune</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Общие ошибки (error_log)</conf_title>
+      <conf_description>Желаете удалять старые записи из журнала общих ошибок (по умолчанию через 30 дней)?</conf_description>
+      <conf_group>5</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>prune_error_logs</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>90</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>prune, error, logs</conf_keywords>
+      <conf_title_keyword>log_prune</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Записывать ошибки</conf_title>
+      <conf_description>Записывать все ошибки выбранного уровня.</conf_description>
+      <conf_group>5</conf_group>
+      <conf_type>dropdown</conf_type>
+      <conf_key>error_log_level</conf_key>
+      <conf_default>4</conf_default>
+      <conf_extra><![CDATA[0=Не записывать никаких общих ошибок&#13;
+1=Записывать абсолютно все ошибки&#13;
+2=Записывать все ошибки 1 уровня и выше&#13;
+3=Записывать все ошибки 2 уровня и выше&#13;
+4=Записывать все ошибки 3 уровня и выше&#13;
+5=Записывать все ошибки 4 уровня и выше&#13;
+6=Записывать все ошибки 5 уровня]]></conf_extra>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>100</conf_position>
+      <conf_start_group>Журнал ошибок</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>log_prune</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Уведомление администратору</conf_title>
+      <conf_description>Уведомлять на e-mail для входящих писем о записи ошибок.</conf_description>
+      <conf_group>5</conf_group>
+      <conf_type>dropdown</conf_type>
+      <conf_key>error_log_notify</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra><![CDATA[0=Не уведомлять вообще&#13;
+1=Уведомлять обо всех ошибках&#13;
+2=Уведомлять об ошибках 1 уровня и выше&#13;
+3=Уведомлять об ошибках 2 уровня и выше&#13;
+4=Уведомлять об ошибках 3 уровня и выше&#13;
+5=Уведомлять об ошибках 4 уровня и выше&#13;
+6=Уведомлять об ошибках 5 уровня]]></conf_extra>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>110</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>email, admin, notify, error, log</conf_keywords>
+      <conf_title_keyword>log_prune</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_is_title>1</conf_is_title>
+      <conf_title_keyword>vk</conf_title_keyword>
+      <conf_title_title>Интеграция с Вконтакте</conf_title_title>
+      <conf_title_desc>Настройки для соединения с Вконтакте</conf_title_desc>
+      <conf_title_tab>System</conf_title_tab>
+      <conf_title_app>core</conf_title_app>
+      <conf_title_noshow>0</conf_title_noshow>
+    </setting>
+    <setting>
+      <conf_title>Включить соединение с Вконтакте?</conf_title>
+      <conf_description><![CDATA[Первоначально вам НЕОБХОДИМО создать приложение Вконтакте. Сделать это можно <a href="http://vkontakte.ru/apps.php?act=add&site=1">здесь</a>]]></conf_description>
+      <conf_group>6</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>vk_enabled</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>1</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>vk</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>ID приложения</conf_title>
+      <conf_description>ID выдается после создания приложения Вконтакте.</conf_description>
+      <conf_group>6</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>vk_api_id</conf_key>
+      <conf_default/>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>2</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>vk</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Защищенный ключ</conf_title>
+      <conf_description>Защищенный ключ выдается после создания приложения Вконтакте</conf_description>
+      <conf_group>6</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>vk_secret</conf_key>
+      <conf_default/>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>4</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>vk</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Пользовательская группа по умолчанию</conf_title>
+      <conf_description>В эту группу будут попадать все пользователи, создавшие свой аккаунт на форуме через аккаунт Вконтакте. Опция не распространяет своего действия на пользователей, которые добавили свой Вконтакте аккаунт после обычной регистрации на форуме.</conf_description>
+      <conf_group>6</conf_group>
+      <conf_type>dropdown</conf_type>
+      <conf_key>vk_mgid</conf_key>
+      <conf_default>3</conf_default>
+      <conf_extra>#show_groups#</conf_extra>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>5</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>vk</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_is_title>1</conf_is_title>
+      <conf_title_keyword>fbconnect</conf_title_keyword>
+      <conf_title_title>Интеграция с социальными сетями</conf_title_title>
+      <conf_title_desc>Настройки для соединения с Вконтакте, Facebook, Twitter, настройки публикации контента в сервисах</conf_title_desc>
+      <conf_title_tab>System</conf_title_tab>
+      <conf_title_app>core</conf_title_app>
+      <conf_title_noshow>0</conf_title_noshow>
+    </setting>
+    <setting>
+      <conf_title>Включить соединение с Facebook?</conf_title>
+      <conf_description><![CDATA[Первоначально вам НЕОБХОДИМО настроить сам Facebook.<br /?Для этого перейдите <a href="http://www.facebook.com/developers/editapp.php?new">сюда</a>]]></conf_description>
+      <conf_group>7</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>fbc_enable</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>1</conf_position>
+      <conf_start_group>Facebook Connect</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>fbconnect</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>ID приложения</conf_title>
+      <conf_description>ID выдается после создания Facebook Application.</conf_description>
+      <conf_group>7</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>fbc_appid</conf_key>
+      <conf_default/>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>3</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>fbconnect</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Приватный ключ</conf_title>
+      <conf_description><![CDATA[Данный ключ показывается как "Секретно" после создания Facebook Application.]]></conf_description>
+      <conf_group>7</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>fbc_secret</conf_key>
+      <conf_default/>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>3</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>fbconnect</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Пользовательская группа по умолчанию</conf_title>
+      <conf_description>В эту группу будут попадать все пользователи, создавшие свой аккаунт на форуме через аккаунт Facebook. Опция не распространяет своего действия на пользователей, которые добавили свой Facebook аккаунт после обычной регистрации на форуме.</conf_description>
+      <conf_group>7</conf_group>
+      <conf_type>dropdown</conf_type>
+      <conf_key>fbc_mgid</conf_key>
+      <conf_default>3</conf_default>
+      <conf_extra>#show_groups#</conf_extra>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>4</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>fbconnect</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title><![CDATA[Группа для Facebook &quot;Bot&quot;]]></conf_title>
+      <conf_description>Facebook проверяет страницу с материалом при использовании кнопок «Мне нравится» и «Поделиться». Укажите группу, в которую будет попадать робот, зашедший для проверки на форум . Например, если для гостей у вас скрыта часть форумов, то стоит выставить группу «Пользователи».</conf_description>
+      <conf_group>7</conf_group>
+      <conf_type>multi</conf_type>
+      <conf_key>fbc_bot_group</conf_key>
+      <conf_default>2</conf_default>
+      <conf_extra>#show_groups#</conf_extra>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>5</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>fbconnect</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title><![CDATA[&quot;Локаль&quot; Facebook Javascript]]></conf_title>
+      <conf_description>Какую локаль необходимо использовать для виджетов Facebook. Полный список локалей: http://wiki.developers.facebook.com/index.php/Facebook_Locales</conf_description>
+      <conf_group>7</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>fb_locale</conf_key>
+      <conf_default>ru_RU</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>6</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>fbconnect</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title><![CDATA[Facebook обработка &quot;Отображаемого имения&quot;]]></conf_title>
+      <conf_description>Какое имя использовать в качестве отображаемого, при создании учетной записи на форуме и входе через Facebook.</conf_description>
+      <conf_group>7</conf_group>
+      <conf_type>dropdown</conf_type>
+      <conf_key>fb_realname</conf_key>
+      <conf_default>any</conf_default>
+      <conf_extra>any=на выбор пользователя&#13;
+prefilled=на выбор пользователя, но заполнить данными имени из facebook&#13;
+enforced=использовать имя из facebook</conf_extra>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>7</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>fbconnect</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Включить интеграцию с Twitter</conf_title>
+      <conf_description><![CDATA[Вам также необходимо настроить Twitter приложение <a href="http://twitter.com/oauth_clients">здесь</a>]]></conf_description>
+      <conf_group>7</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>tc_enabled</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>30</conf_position>
+      <conf_start_group>Интеграция с Twitter</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>fbconnect</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Consumer Key</conf_title>
+      <conf_description/>
+      <conf_group>7</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>tc_token</conf_key>
+      <conf_default/>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>31</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>fbconnect</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Consumer Secret</conf_title>
+      <conf_description/>
+      <conf_group>7</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>tc_secret</conf_key>
+      <conf_default/>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>32</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>fbconnect</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Пользовательская группа по умолчанию</conf_title>
+      <conf_description>В эту группу будут попадать все пользователи, создавшие свой аккаунт на форуме через аккаунт Twitter. Опция не распространяет своего действия на пользователей, которые добавили свой Twitter аккаунт после обычной регистрации на форуме.</conf_description>
+      <conf_group>7</conf_group>
+      <conf_type>dropdown</conf_type>
+      <conf_key>tc_mgid</conf_key>
+      <conf_default>3</conf_default>
+      <conf_extra>#show_groups#</conf_extra>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>33</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>fbconnect</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Включить возможность делиться ссылками</conf_title>
+      <conf_description>На страницах с контентом будут добавлены ссылки для публикации контента в различных сервисах. Данная возможность может быть отключена для конкретных форумов непосредственно в настройках самих форумов.</conf_description>
+      <conf_group>7</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>sl_enable</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>40</conf_position>
+      <conf_start_group>Публикация контента в сервисах</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>fbconnect</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Разрешить список опубликованных материалов</conf_title>
+      <conf_description>Так как нет возможности проверять права доступа для опубликованных на сервисах материалов вы можете полностью отключить отображение списков таких материалов.</conf_description>
+      <conf_group>7</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>sl_publicdata</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>41</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>fbconnect</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title><![CDATA[Включить &quot;Авто-постинг в соц.сети&quot; при создании новых публикаций]]></conf_title>
+      <conf_description>Только для приложений поддерживающих эту возможность. Не делается авто-постинг для ответов и комментариев.</conf_description>
+      <conf_group>7</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>sm_autoshare</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>42</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>fbconnect</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_is_title>1</conf_is_title>
+      <conf_title_keyword>email</conf_title_keyword>
+      <conf_title_title>Настройки E-mail</conf_title_title>
+      <conf_title_desc>Группа опций, позволяющих настраивать методы отправки писем с форума</conf_title_desc>
+      <conf_title_tab>System</conf_title_tab>
+      <conf_title_app>core</conf_title_app>
+      <conf_title_noshow>0</conf_title_noshow>
+    </setting>
+    <setting>
+      <conf_title>Метод отправки почты</conf_title>
+      <conf_description>Выберите способ, которым будет отправляться почта с форума. Если PHP функция mail() не работает или не доступна, используйте SMTP. Если вы не уверены, что необходимо выбрать в данном параметре, проконсультируйтесь с вашим хостинг-провайдером.</conf_description>
+      <conf_group>8</conf_group>
+      <conf_type>dropdown</conf_type>
+      <conf_key>mail_method</conf_key>
+      <conf_default>mail</conf_default>
+      <conf_extra>mail=PHP Mail()&#13;
+smtp=SMTP</conf_extra>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>1</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>email</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Отправлять HTML форматированные сообщения</conf_title>
+      <conf_description/>
+      <conf_group>8</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>email_use_html</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>1</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>email</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Email адрес для писем</conf_title>
+      <conf_description>На этот email будут приходить все письма</conf_description>
+      <conf_group>8</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>email_in</conf_key>
+      <conf_default/>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>2</conf_position>
+      <conf_start_group>Адреса Email</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>email</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Email адрес для поля От</conf_title>
+      <conf_description>Данный email будет виден в поле От, во всех письмах, пришедших от форума.</conf_description>
+      <conf_group>8</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>email_out</conf_key>
+      <conf_default/>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>3</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>email</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Адрес сервера</conf_title>
+      <conf_description><![CDATA[По умолчанию 'localhost']]></conf_description>
+      <conf_group>8</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>smtp_host</conf_key>
+      <conf_default>localhost</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>4</conf_position>
+      <conf_start_group>Настройка SMTP</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>email</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Порт сервера</conf_title>
+      <conf_description>По умолчанию 25</conf_description>
+      <conf_group>8</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>smtp_port</conf_key>
+      <conf_default>25</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>5</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>email</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title><![CDATA[Использовать &#39;&lt;&#39; и &#39;&gt;&#39; в &#39;to&#39; и &#39;from&#39; адресах?]]></conf_title>
+      <conf_description>Некоторые SMTP сервера требуют особого формата адресов. Если у вас есть проблема с отправкой писем, попробуйте включить или отключить эту опцию</conf_description>
+      <conf_group>8</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>mail_wrap_brackets</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>6</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>email</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Имя пользователя на сервере</conf_title>
+      <conf_description><![CDATA[В случае использования 'localhost' обычно не требуется.]]></conf_description>
+      <conf_group>8</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>smtp_user</conf_key>
+      <conf_default/>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>7</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>email</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Пароль пользователя</conf_title>
+      <conf_description><![CDATA[В случае использования 'localhost' обычно не требуется.]]></conf_description>
+      <conf_group>8</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>smtp_pass</conf_key>
+      <conf_default/>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>8</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>email</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Дополнительные опции для функции</conf_title>
+      <conf_description><![CDATA[Вы можете добавить дополнительные опции, которые будут переданы параметром в функцию Mail().
+Например: -femail@address.com задаст принудительное значение 'From' для всех писем.]]></conf_description>
+      <conf_group>8</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>php_mail_extra</conf_key>
+      <conf_default/>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>9</conf_position>
+      <conf_start_group>Настройки PHP Mail</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>email</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Настройка SMTP HELO</conf_title>
+      <conf_description>Выберите тип, необходимый для вашего SMTP сервера.</conf_description>
+      <conf_group>8</conf_group>
+      <conf_type>dropdown</conf_type>
+      <conf_key>smtp_helo</conf_key>
+      <conf_default>HELO</conf_default>
+      <conf_extra>HELO=HELO&#13;
+EHLO=EHLO</conf_extra>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>9</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>helo ehlo</conf_keywords>
+      <conf_title_keyword>email</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_is_title>1</conf_is_title>
+      <conf_title_keyword>ipconverge</conf_title_keyword>
+      <conf_title_title>Настройки IP.Converge</conf_title_title>
+      <conf_title_desc>Программные настройки</conf_title_desc>
+      <conf_title_tab>Advanced</conf_title_tab>
+      <conf_title_app>core</conf_title_app>
+      <conf_title_noshow>1</conf_title_noshow>
+    </setting>
+    <setting>
+      <conf_title>Включить IP.Converge?</conf_title>
+      <conf_description>Если опция включена, IPB будет производить идентификацию через  IP.Converge.</conf_description>
+      <conf_group>9</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>ipconverge_enabled</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>1</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>ipconverge</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Адрес IP.Converge</conf_title>
+      <conf_description>Корневой URL адрес приложения IP.Converge.</conf_description>
+      <conf_group>9</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>ipconverge_url</conf_key>
+      <conf_default/>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>2</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>ipconverge</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Идентификационный номер (Product ID) IP.Converge</conf_title>
+      <conf_description>Номер, полученный от IP.Converge сервера.</conf_description>
+      <conf_group>9</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>ipconverge_pid</conf_key>
+      <conf_default/>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>3</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>ipconverge</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_is_title>1</conf_is_title>
+      <conf_title_keyword>xmlrpcapi</conf_title_keyword>
+      <conf_title_title>Настройки XML-RPC API</conf_title_title>
+      <conf_title_desc>Группа опций, позволяющих настроить XML-RPC API интерфейс</conf_title_desc>
+      <conf_title_tab>Advanced</conf_title_tab>
+      <conf_title_app>core</conf_title_app>
+      <conf_title_noshow>0</conf_title_noshow>
+    </setting>
+    <setting>
+      <conf_title>Включить XML-RPC API</conf_title>
+      <conf_description>При включении данной системы программы-клиенты смогут использовать XML-RPC интерфейс форума.</conf_description>
+      <conf_group>10</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>xmlrpc_enable</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>1</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>xmlrpcapi</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Журналирование</conf_title>
+      <conf_description>Позволяет указать тип записей для журнала XML-RPC. Если вы выбираете Все, то в журнал записываются все запросы XML-RPC, если - Ошибки, то в журнал записываются проблемные запросы.</conf_description>
+      <conf_group>10</conf_group>
+      <conf_type>dropdown</conf_type>
+      <conf_key>xmlrpc_log_type</conf_key>
+      <conf_default>all</conf_default>
+      <conf_extra>all=Все&#13;
+failed=Ошибки</conf_extra>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>2</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>xmlrpcapi</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Время жизни записей журнала</conf_title>
+      <conf_description>За какой промежуток времени хранить записи журнала. Например, если вы введете значение опции 30, то в журнале будут записи за последние 30 дней.</conf_description>
+      <conf_group>10</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>xmlrpc_log_expire</conf_key>
+      <conf_default>30</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>3</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>xmlrpcapi</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_is_title>1</conf_is_title>
+      <conf_title_keyword>archiveips</conf_title_keyword>
+      <conf_title_title>Настройки архивации</conf_title_title>
+      <conf_title_desc>Настройки архивации контента</conf_title_desc>
+      <conf_title_tab>Advanced</conf_title_tab>
+      <conf_title_app>core</conf_title_app>
+      <conf_title_noshow>0</conf_title_noshow>
+    </setting>
+    <setting>
+      <conf_title>Включить систему архивирования</conf_title>
+      <conf_description/>
+      <conf_group>11</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>archive_on</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>1</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>archiveips</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Восстановить за последние X дней</conf_title>
+      <conf_description/>
+      <conf_group>11</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>archive_restore_days</conf_key>
+      <conf_default/>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>2</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>archiveips</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_is_title>1</conf_is_title>
+      <conf_title_keyword>securityandprivacy</conf_title_keyword>
+      <conf_title_title>Настройки безопасности</conf_title_title>
+      <conf_title_desc>Настройки, при помощи которых вы можете настроить требуемые параметры безопасности на форуме</conf_title_desc>
+      <conf_title_tab>System</conf_title_tab>
+      <conf_title_app>core</conf_title_app>
+      <conf_title_noshow>0</conf_title_noshow>
+    </setting>
+    <setting>
+      <conf_title>Разрешить X_FORWARDED_FOR?</conf_title>
+      <conf_description>Если данная опция включена, то система будет учитывать заголовки X_FORWARDED_FOR при получении IP-адреса пользователя. Это бывает полезно в Интранет сетях, когда REMOTE_ADDR один  и тот же для всех пользователей сети. Однако данный заголовок очень легко изменить, и этим фактом могут воспользоваться с целью подмены IP адреса.</conf_description>
+      <conf_group>12</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>xforward_matching</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>11</conf_position>
+      <conf_start_group>Безопасность</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>securityandprivacy</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Метод восстановления забытого пароля</conf_title>
+      <conf_description><![CDATA[Рекомендуем использовать метод 'Выслать по почте случайно сгенерированный пароль', поскольку это самый безопасный метод.]]></conf_description>
+      <conf_group>12</conf_group>
+      <conf_type>dropdown</conf_type>
+      <conf_key>lp_method</conf_key>
+      <conf_default>random</conf_default>
+      <conf_extra>random=высылать по почте случайно сгенерированный пароль&#13;
+choose=разрешить пользователю самому ввести новый пароль</conf_extra>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>12</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>securityandprivacy</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Время жизни ключа авторизации пользователя</conf_title>
+      <conf_description>В течение указанного промежутка времени, ключ авторизации (он устанавливается в cookie пользователя) будет считаться действительным. По истечению указанного срока, пользователю выставляется новый ключ. Чем меньше временной интервал, тем больше защищены пользователи от кражи cookies.</conf_description>
+      <conf_group>12</conf_group>
+      <conf_type>dropdown</conf_type>
+      <conf_key>login_key_expire</conf_key>
+      <conf_default>7</conf_default>
+      <conf_extra>0=без срочный (не рекомендуется)&#13;
+3=истекает через 3 дня&#13;
+7=истекает через 7 дней&#13;
+30=истекает через 30 дней</conf_extra>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>13</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>securityandprivacy</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Длительность сессии</conf_title>
+      <conf_description>Число секунд, проходящее до того, как сессия пользователя истечёт и будет удалена. Чем меньше это число, тем меньше шансов, что сессию перехватят.</conf_description>
+      <conf_group>12</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>session_expiration</conf_key>
+      <conf_default>3600</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>15</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>securityandprivacy</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Учитывать IP адрес пользователя при проверке сессии?</conf_title>
+      <conf_description>Если функция включена, IP адрес пользователя должен совпадать со значением, хранимым в таблице сессий. Отключите данную функцию в интранете, когда многие пользователи имеют один и тот же IP адрес.</conf_description>
+      <conf_group>12</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>match_ipaddress</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>16</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>securityandprivacy</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Учитывать браузер пользователя при проверке сессии?</conf_title>
+      <conf_description>Данная функция еще более снижает вероятность перехвата сессии, но это значит, что сессия пользователя прекратиться, если он одновременно воспользуется несколькими браузерами.</conf_description>
+      <conf_group>12</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>match_browser</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>17</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>securityandprivacy</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Количество неудачных попыток авторизоваться</conf_title>
+      <conf_description><![CDATA[Количество неудавшихся попыток авторизоваться до того, как учетная запись будет заблокирована.<br />
+<b>Совет</b>: Установите 0, чтобы отключить функцию.]]></conf_description>
+      <conf_group>12</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>ipb_bruteforce_attempts</conf_key>
+      <conf_default>3</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>18</conf_position>
+      <conf_start_group>Защита от перебора паролей</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>securityandprivacy</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Сбрасывать счетчик неудачных попыток через Х минут</conf_title>
+      <conf_description><![CDATA[Через сколько минут сбросить счет неудачных попыток авторизации? <br />
+<b>Совет</b>: Установите 0, чтобы не сбрасывать неудавшиеся попытки. <!-- locked -->]]></conf_description>
+      <conf_group>12</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>ipb_bruteforce_period</conf_key>
+      <conf_default>15</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>19</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>securityandprivacy</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Автоматически разблокировать учетную запись?</conf_title>
+      <conf_description><![CDATA[Если запись заблокирована из-за неудачных попыток авторизации, можно разблокировать учетную запись через определенный промежуток времени после неудачных попыток.<br />
+<b>Совет</b>: Отключение данной функции потребует разблокировать учетные записи вручную во вкладке Система.]]></conf_description>
+      <conf_group>12</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>ipb_bruteforce_unlock</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>20</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>securityandprivacy</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Убрать ссылку на АЦ с форума?</conf_title>
+      <conf_description><![CDATA[Если функция активна, ссылка на АЦ не будет отображаться в заголовке форума. Полезно, если вы переименовали папку 'admin'.]]></conf_description>
+      <conf_group>12</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>security_remove_acp_link</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>24</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>securityandprivacy</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Использовать https протокол для форм входа?</conf_title>
+      <conf_description>Использование протокола HTTPS, позволяет защитить передачу логина и пароля. Использовать данную опцию можно только в случае правильной настройки web-сервера.</conf_description>
+      <conf_group>12</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>logins_over_https</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>25</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>securityandprivacy</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Использовать активацию учетных записей пользователей?</conf_title>
+      <conf_description><![CDATA[Администратор может вручную утверждать все новые учетные записи или установить проверку электронных адресов пользователей. Если установлен метод проверки "Активация по e-mail, затем администратором", то пользователь получает проверочное электронное письмо. При успешной активации, пользователь попадает в очередь на утверждение администратором.]]></conf_description>
+      <conf_group>12</conf_group>
+      <conf_type>dropdown</conf_type>
+      <conf_key>reg_auth_type</conf_key>
+      <conf_default>user</conf_default>
+      <conf_extra>admin_user=активация по e-mail, затем администратором&#13;
+user=активация пользователем по e-mail&#13;
+admin=активация администратором&#13;
+0=нет</conf_extra>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>26</conf_position>
+      <conf_start_group><![CDATA[Безопасность [работа с пользователями]]]></conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>securityandprivacy</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Удалять неактивированные учетные записи после X дней</conf_title>
+      <conf_description>Включение этой опции позволяет удалять все учётные записи автоматически, если они не были активированы в течение указанного количества дней. Введите 0, чтобы не удалять автоматически неподтвержденные регистрации.</conf_description>
+      <conf_group>12</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>validate_day_prune</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>27</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>securityandprivacy</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Уведомлять при регистрации нового пользователя?</conf_title>
+      <conf_description>Включение опции позволяет уведомлять администрацию о каждой новой регистрации пользователя на форуме.</conf_description>
+      <conf_group>12</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>new_reg_notify</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>28</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>securityandprivacy</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Заставлять посетителей авторизоваться, чтобы увидеть форум?</conf_title>
+      <conf_description>Если эта настройка включена, посетители должны будут либо авторизоваться, либо зарегистрироваться перед тем, как продолжить просмотр форума.</conf_description>
+      <conf_group>12</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>force_login</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>32</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>securityandprivacy</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Отключить регистрацию?</conf_title>
+      <conf_description>Включение этой настройки полностью отключает возможность регистрации посетителей на форуме.</conf_description>
+      <conf_group>12</conf_group>
+      <conf_type>dropdown</conf_type>
+      <conf_key>no_reg</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra>0=нет&#13;
+1=только внутреннюю&#13;
+2=все возможные методы регистрации</conf_extra>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>33</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>securityandprivacy</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Удалять коды chr(0xCA) при вводе?</conf_title>
+      <conf_description><![CDATA[Символ chr(0xCA) может использоваться в качестве 'скрытого' символа пробела для эмуляции зарегистрированных имен – <strong>может стать причиной пропадания символов в сообщениях в кодировках, отличных от западной</strong>.]]></conf_description>
+      <conf_group>12</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>strip_space_chr</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>34</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>securityandprivacy</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Флуд-контроль — интервал задержки</conf_title>
+      <conf_description><![CDATA[Заставит пользователей подождать перед размещением следующего сообщения.<br>Если оставить настройку пустой, флуд-контроль будет отключён. Не относится к пользователям, принадлежащим к группе, которой разрешено обходить флуд-контроль.]]></conf_description>
+      <conf_group>12</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>flood_control</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>36</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>securityandprivacy</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Разрешить пользователям просматривать список активных пользователей?</conf_title>
+      <conf_description>Если настройка включена, пользователи и посетители получат возможность просматривать списки активных пользователей. Темы и форумы, которые пользователь не имеет право просматривать, не показываются.</conf_description>
+      <conf_group>12</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>allow_online_list</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>37</conf_position>
+      <conf_start_group>Приватность</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>securityandprivacy</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Отключить возможность анонимной авторизации?</conf_title>
+      <conf_description><![CDATA[Если опция включена, то пользователи не увидят опцию "Скрытность" в форме входа.]]></conf_description>
+      <conf_group>12</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>disable_anonymous</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>38</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>securityandprivacy</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Показывать версию IPB?</conf_title>
+      <conf_description/>
+      <conf_group>12</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>ipb_display_version</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>40</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>securityandprivacy</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_is_title>1</conf_is_title>
+      <conf_title_keyword>task_hidden</conf_title_keyword>
+      <conf_title_title>Настройки планировщика задач</conf_title_title>
+      <conf_title_desc/>
+      <conf_title_tab>System</conf_title_tab>
+      <conf_title_app>core</conf_title_app>
+      <conf_title_noshow>0</conf_title_noshow>
+    </setting>
+    <setting>
+      <conf_title>Использовать Cron?</conf_title>
+      <conf_description/>
+      <conf_group>13</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>task_use_cron</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>1</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>task_hidden</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Ключ Cron</conf_title>
+      <conf_description/>
+      <conf_group>13</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>task_cron_key</conf_key>
+      <conf_default/>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>2</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>task_hidden</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_is_title>1</conf_is_title>
+      <conf_title_keyword>searchsetup</conf_title_keyword>
+      <conf_title_title>Настройки поиска</conf_title_title>
+      <conf_title_desc>Группа опций для настройки поисковой системы форума.</conf_title_desc>
+      <conf_title_tab>System</conf_title_tab>
+      <conf_title_app>core</conf_title_app>
+      <conf_title_noshow>0</conf_title_noshow>
+    </setting>
+    <setting>
+      <conf_title>Тип поиска</conf_title>
+      <conf_description><![CDATA[Вы можете использовать или традиционный тип или <a href="http://www.sphinxsearch.com/">Sphinx</a> (если доступно).
+<!--FULLTEXT-->
+<br />
+<!--FULLCHECK-->]]></conf_description>
+      <conf_group>14</conf_group>
+      <conf_type>dropdown</conf_type>
+      <conf_key>search_method</conf_key>
+      <conf_default>traditional</conf_default>
+      <conf_extra>traditional=Традиционный&#13;
+sphinx=Sphinx</conf_extra>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>1</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>searchsetup</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Включить полнотекстовый поиск?</conf_title>
+      <conf_description>Работает, если выбран традиционный тип поиска. Если база данных настроена некорректно, то полнотекстовый (fulltext) поиск может плохо искать по ключевым словам на русском языке.</conf_description>
+      <conf_group>14</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>use_fulltext</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>2</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>searchsetup</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Минимальная длина ключевого слова</conf_title>
+      <conf_description><![CDATA[Чем меньше минимальная длина, тем более возможны в результатах появление предлогов 'в', 'на', 'под' и т.д.
+
+Обратите внимание, что эта настройка НЕ будет работать при включенном полнотекстовом режиме поиска.]]></conf_description>
+      <conf_group>14</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>min_search_word</conf_key>
+      <conf_default>4</conf_default>
+      <conf_extra>min_search_word</conf_extra>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>3</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>searchsetup</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Ограничить результаты поиска по темам и сообщениям</conf_title>
+      <conf_description><![CDATA[Укажите максимальное количество, возвращаемых поиском, результатов. Данное ограничение только для 'стандартного поиска', но не для Sphinx.]]></conf_description>
+      <conf_group>14</conf_group>
+      <conf_type>dropdown</conf_type>
+      <conf_key>search_hardlimit</conf_key>
+      <conf_default>200</conf_default>
+      <conf_extra>100=100&#13;
+200=200&#13;
+300=300&#13;
+400=400&#13;
+500=500&#13;
+1000=1000</conf_extra>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>4</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>searchsetup</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Количество отображаемых на одной странице результатов</conf_title>
+      <conf_description>Пол умолчанию 25.</conf_description>
+      <conf_group>14</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>search_per_page</conf_key>
+      <conf_default>25</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>5</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>searchsetup</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Новые публикации должны использовать только SQL</conf_title>
+      <conf_description>При включении данной опции получение данных о новых публикациях будет выполняться только через SQL. Это позволяет убрать временной лаг при работе Sphinx.</conf_description>
+      <conf_group>14</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>force_sql_vnc</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>6</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>searchsetup</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Просмотр новых публикаций: игнорирование разделов</conf_title>
+      <conf_description><![CDATA[Выберите разделы, публикации из которых <b>не</b> будут отображаться в результатах "просмотра новых публикаций".
+
+Зажав клавишу Ctrl можно выбрать несколько разделов.]]></conf_description>
+      <conf_group>14</conf_group>
+      <conf_type>multi</conf_type>
+      <conf_key>vnp_block_forums</conf_key>
+      <conf_default/>
+      <conf_extra>#show_forums#</conf_extra>
+      <conf_evalphp><![CDATA[if ( $save == 1)
+{
+	if ( is_array($_POST['vnp_block_forums']) )
+	{
+		$_POST['vnp_block_forums'] = implode(",",$_POST['vnp_block_forums']);
+	}
+	else
+	{
+		$_POST['vnp_block_forums'] = "";
+	}
+	
+	$key = 'vnp_block_forums';
+}
+if ( $show == 1 )
+{
+$key = 'vnp_block_forums[]';
+}]]></conf_evalphp>
+      <conf_protected>1</conf_protected>
+      <conf_position>6</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>searchsetup</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Тип поиска словосочетаний</conf_title>
+      <conf_description><![CDATA[При типе "ИЛИ" в результатах поиска будут материалы, содержащие хотя бы одно слово, входящее в словосочетание.
+
+При типе "И" в результатах будут только те материалы, которые содержат оба слова.
+
+Опция имеет силу только для «Традиционного» поиска]]></conf_description>
+      <conf_group>14</conf_group>
+      <conf_type>dropdown</conf_type>
+      <conf_key>s_andor_type</conf_key>
+      <conf_default>and</conf_default>
+      <conf_extra>and=И&#13;
+or=ИЛИ</conf_extra>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>7</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>searchsetup</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>По умолчанию новыми публикациями считать:</conf_title>
+      <conf_description/>
+      <conf_group>14</conf_group>
+      <conf_type>dropdown</conf_type>
+      <conf_key>default_vnc_method</conf_key>
+      <conf_default>unread</conf_default>
+      <conf_extra>unread=Не прочитанное&#13;
+lastvisit=Новое с последнего посещения</conf_extra>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>8</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>searchsetup</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Скрыть уведомление о полнотекстовом поиске?</conf_title>
+      <conf_description>Если вы используете традиционный и обычный тип поиска, а ваш SQL сервер поддерживает полнотекстовый поиск, то на главной странице админцентра будет отображаться соответствующее уведомление. Вы можете скрыть его, включив данную опцию.</conf_description>
+      <conf_group>14</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>hide_ftext_note</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>9</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>searchsetup</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Адрес сервера</conf_title>
+      <conf_description>Адрес вашего сервера Sphinx.&#13;
+По умолчанию 127.0.0.1.</conf_description>
+      <conf_group>14</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>search_sphinx_server</conf_key>
+      <conf_default>127.0.0.1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>10</conf_position>
+      <conf_start_group>Настройки Sphinx</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>searchsetup</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title><![CDATA[Ограничить &quot;Темы/Сообщения этого пользователя&quot; результатами за X дней]]></conf_title>
+      <conf_description>Количество дней считается с момента последнего сообщения пользователя. Таким образом, если последний раз пользователь отправлял сообщение/тему в марте, и вы указали в настройках лимит в 30 дней, то поиск будет искать все темы/сообщения за февраль (т.е. 30-ю днями ранее последней даты отправки сообщения).</conf_description>
+      <conf_group>14</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>search_ucontent_days</conf_key>
+      <conf_default>365</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>10</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>searchsetup</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Порт</conf_title>
+      <conf_description>Порт, используемый для соединения с вашим Sphinx сервером.&#13;
+По умолчанию 3312.</conf_description>
+      <conf_group>14</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>search_sphinx_port</conf_key>
+      <conf_default>3312</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>11</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>searchsetup</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Базовый путь</conf_title>
+      <conf_description>Базовый путь для индексов и логов Sphinx.</conf_description>
+      <conf_group>14</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>sphinx_base_path</conf_key>
+      <conf_default>/var/sphinx</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>12</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>searchsetup</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Префикс для Sphinx индекса</conf_title>
+      <conf_description>Использование уникального префикса для индекса данного форума. Это позволяет использовать один Sphinx демон для нескольких форумов IP.Board</conf_description>
+      <conf_group>14</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>sphinx_prefix</conf_key>
+      <conf_default/>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>13</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>searchsetup</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Включить поддержку расширенных запросов</conf_title>
+      <conf_description><![CDATA[При включении возможности расширенных запросов у пользователей появится возможность делать запросы вида "ключ*", в итоге будут найдено все, что содержит слова "ключ", "ключи", "ключевой" и подобное. На больших форумах включение данной опции может привести к падению скорости создания поискового индекса. После включения опции необходимо <a href='{ACP_URL}app=core&&core&module=applications&section=applications&do=build_sphinx'>перестроить все Sphinx индексы</a>]]></conf_description>
+      <conf_group>14</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>sphinx_wildcard</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>14</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>searchsetup</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_is_title>1</conf_is_title>
+      <conf_title_keyword>serverenvironment</conf_title_keyword>
+      <conf_title_title>Настройки серверного окружения</conf_title_title>
+      <conf_title_desc>Настройки данной группы, позволяют подстроить ваш форум под параметры серверного окружения.</conf_title_desc>
+      <conf_title_tab>System</conf_title_tab>
+      <conf_title_app>core</conf_title_app>
+      <conf_title_noshow>0</conf_title_noshow>
+    </setting>
+    <setting>
+      <conf_title>Кодировка страниц форума</conf_title>
+      <conf_description>Кодировка для всех HTML страниц системы. Мы настоятельно рекомендуем использовать UTF-8</conf_description>
+      <conf_group>15</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>gb_char_set</conf_key>
+      <conf_default>UTF-8</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>1</conf_position>
+      <conf_start_group>Кодировки</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>serverenvironment</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Способ перекодировки текста</conf_title>
+      <conf_description>Не все способы могут поддерживаться сервером</conf_description>
+      <conf_group>15</conf_group>
+      <conf_type>dropdown</conf_type>
+      <conf_key>charset_conv_method</conf_key>
+      <conf_default>mb</conf_default>
+      <conf_extra>internal=Внтренний&#13;
+mb=mb функции&#13;
+recode=recode&#13;
+iconv=iconv</conf_extra>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>2</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>multibyte, utf8, utf-8, charset, recode, iconv, mb, internal</conf_keywords>
+      <conf_title_keyword>serverenvironment</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Отключить AJAX для текстов</conf_title>
+      <conf_description>Полезно для сайтов имеющих проблемы с неверным отображением символов национальных кодировок, не поддерживаемых PHP.</conf_description>
+      <conf_group>15</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>disable_text_ajax</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>3</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>serverenvironment</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Включить безопасный режим для стилей?</conf_title>
+      <conf_description>В безопасном режиме работы стилей система подключает шаблоны стилей из базы данных. В обычном режиме, система использует шаблоны стилей из кеш-файлов, хранящихся в директории cache. Безопасный режим необходим в случае проблем с чтением стилей из кеш-файлов, например, когда появляются PHP ошибки, связанные с safemode и/или open_basedir.</conf_description>
+      <conf_group>15</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>safe_mode_skins</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>4</conf_position>
+      <conf_start_group>Серверное окружение</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>serverenvironment</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Отключить GZIP?</conf_title>
+      <conf_description>GZIP позволяет быстрее отправлять страницы клиентам, сжимая их и экономя трафик, однако, не все серверы позволяют использовать данный формат, а некоторые серверы используют GZIP по умолчанию.</conf_description>
+      <conf_group>15</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>disable_gzip</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>5</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>serverenvironment</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Принудительно отправлять HTTP заголовки?</conf_title>
+      <conf_description/>
+      <conf_group>15</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>print_headers</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>7</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>serverenvironment</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Отправлять HTTP заголовки для отключения кеширования?</conf_title>
+      <conf_description><![CDATA[Данная опция отключит кеширование страниц форума браузерами<br /><b>Примечание</b>: Необходимо активировать опцию выше, чтобы данная настройка имела действие.]]></conf_description>
+      <conf_group>15</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>nocache</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>8</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>serverenvironment</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Тип переадресации</conf_title>
+      <conf_description>Способы переадресации для браузера. Опция позволяет решить проблему не отображения страниц после отправки ответа, перехода к новой теме раздела и т.п</conf_description>
+      <conf_group>15</conf_group>
+      <conf_type>dropdown</conf_type>
+      <conf_key>header_redirect</conf_key>
+      <conf_default>location</conf_default>
+      <conf_extra>location=Location type (*nix savvy)&#13;
+refresh=Refresh (Windows savvy)&#13;
+html=HTML META redirect (Если другие варианты не работают)</conf_extra>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>10</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>serverenvironment</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Имя пользователя</conf_title>
+      <conf_description>Это имя пользователя будет использоваться во всех .htaccess файлах.</conf_description>
+      <conf_group>15</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>http_auth_username</conf_key>
+      <conf_default/>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>12</conf_position>
+      <conf_start_group>HTTP авторизация</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>serverenvironment</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Пароль</conf_title>
+      <conf_description>Этот пароль будет использоваться во всех файлах .htaccess.</conf_description>
+      <conf_group>15</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>http_auth_password</conf_key>
+      <conf_default/>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>13</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>serverenvironment</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Домен</conf_title>
+      <conf_description><![CDATA[Используйте <u>.</u>domain.ru для установки cookies, которые будут действовать как на основном домене (domain.ru) так и на всех субдоменах данного домена.]]></conf_description>
+      <conf_group>15</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>cookie_domain</conf_key>
+      <conf_default/>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>500</conf_position>
+      <conf_start_group>Cookies</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>serverenvironment</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Префикс</conf_title>
+      <conf_description>Используйте префикс, если у вас установлено несколько форумов на одном домене.</conf_description>
+      <conf_group>15</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>cookie_id</conf_key>
+      <conf_default/>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>501</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>serverenvironment</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Путь</conf_title>
+      <conf_description/>
+      <conf_group>15</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>cookie_path</conf_key>
+      <conf_default/>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>502</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>serverenvironment</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_is_title>1</conf_is_title>
+      <conf_title_keyword>adcodeintegration</conf_title_keyword>
+      <conf_title_title>Настройки системы рекламы</conf_title_title>
+      <conf_title_desc>Данные опции позволяют настроить рекламные площадки форума</conf_title_desc>
+      <conf_title_tab>System</conf_title_tab>
+      <conf_title_app>core</conf_title_app>
+      <conf_title_noshow>0</conf_title_noshow>
+    </setting>
+    <setting>
+      <conf_title>Включить систему</conf_title>
+      <conf_description>Опция позволяет включить или отключить систему показа рекламы на форуме</conf_description>
+      <conf_group>16</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>ad_code_global_enabled</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>1</conf_position>
+      <conf_start_group>Основные настройки</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>adcodeintegration</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Группы без просмотра рекламы</conf_title>
+      <conf_description>Выбранные группы не будут видеть рекламу на форуме</conf_description>
+      <conf_group>16</conf_group>
+      <conf_type>multi</conf_type>
+      <conf_key>ad_code_exempt_groups</conf_key>
+      <conf_default/>
+      <conf_extra>#show_groups#</conf_extra>
+      <conf_evalphp><![CDATA[if ( $save == 1)
+{
+	if ( is_array($_POST['ad_code_exempt_groups']) )
+	{
+		$_POST['ad_code_exempt_groups'] = implode(",",$_POST['ad_code_exempt_groups']);
+	}
+	else
+	{
+		$_POST['ad_code_exempt_groups'] = "";
+	}
+	
+	$key = 'ad_code_exempt_groups';
+}
+if ( $show == 1 )
+{
+    $key='ad_code_exempt_groups[]';
+}]]></conf_evalphp>
+      <conf_protected>1</conf_protected>
+      <conf_position>2</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>adcodeintegration</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Код для добавления в шапку</conf_title>
+      <conf_description>Данный код будет вставлен в шапку форума</conf_description>
+      <conf_group>16</conf_group>
+      <conf_type>textarea</conf_type>
+      <conf_key>ad_code_global_header</conf_key>
+      <conf_default/>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>3</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ad,advertisement,code,header</conf_keywords>
+      <conf_title_keyword>adcodeintegration</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Код для добавления в подвал</conf_title>
+      <conf_description>Данный код будет добавлен в подвал форума</conf_description>
+      <conf_group>16</conf_group>
+      <conf_type>textarea</conf_type>
+      <conf_key>ad_code_global_footer</conf_key>
+      <conf_default/>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>4</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>ad,code,advertisement,footer</conf_keywords>
+      <conf_title_keyword>adcodeintegration</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Код для добавления в шапку</conf_title>
+      <conf_description>Данный код будет вставляться только на главной странице форума. Опция перекрывает значение, указанное в параметре «Код для добавления в шапку» основных настроек.</conf_description>
+      <conf_group>16</conf_group>
+      <conf_type>textarea</conf_type>
+      <conf_key>ad_code_board_index_header</conf_key>
+      <conf_default/>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>5</conf_position>
+      <conf_start_group>Главная страница</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>adcodeintegration</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Код для добавления в подвал</conf_title>
+      <conf_description>Данный код будет вставляться только на главной странице форума. Опция перекрывает значение, указанное в параметре «Код для добавления в подвал» основных настроек.</conf_description>
+      <conf_group>16</conf_group>
+      <conf_type>textarea</conf_type>
+      <conf_key>ad_code_board_index_footer</conf_key>
+      <conf_default/>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>6</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>adcodeintegration</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Код для добавления в боковую панель</conf_title>
+      <conf_description>Данный код будет вставлен в боковую панель главной страницы</conf_description>
+      <conf_group>16</conf_group>
+      <conf_type>textarea</conf_type>
+      <conf_key>ad_code_board_sidebar</conf_key>
+      <conf_default/>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>7</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>adcodeintegration</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Код для добавления в шапку</conf_title>
+      <conf_description>Данный код будет вставляться только на странице тем форума. Опция перекрывает значение, указанное в параметре «Код для добавления в шапку» основных настроек.</conf_description>
+      <conf_group>16</conf_group>
+      <conf_type>textarea</conf_type>
+      <conf_key>ad_code_forum_view_header</conf_key>
+      <conf_default/>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>8</conf_position>
+      <conf_start_group>Страница форума</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>adcodeintegration</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Код для добавления в подвал</conf_title>
+      <conf_description>Данный код будет вставляться только на странице тем форума. Опция перекрывает значение, указанное в параметре «Код для добавления в подвал» основных настроек.</conf_description>
+      <conf_group>16</conf_group>
+      <conf_type>textarea</conf_type>
+      <conf_key>ad_code_forum_view_footer</conf_key>
+      <conf_default/>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>9</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>adcodeintegration</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Код для добавления после первой темы</conf_title>
+      <conf_description>Данный код будет вставлен после первой темы в списке тем форума</conf_description>
+      <conf_group>16</conf_group>
+      <conf_type>textarea</conf_type>
+      <conf_key>ad_code_forum_view_topic_code</conf_key>
+      <conf_default/>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>10</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>adcodeintegration</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Код для добавления в шапку</conf_title>
+      <conf_description>Данный код будет вставляться только на странице темы форума. Опция перекрывает значение, указанное в параметре «Код для добавления в шапку» основных настроек.</conf_description>
+      <conf_group>16</conf_group>
+      <conf_type>textarea</conf_type>
+      <conf_key>ad_code_topic_view_header</conf_key>
+      <conf_default/>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>11</conf_position>
+      <conf_start_group>Страница темы</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>adcodeintegration</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Код для добавления в подвал</conf_title>
+      <conf_description>Данный код будет вставляться только на странице темы форума. Опция перекрывает значение, указанное в параметре «Код для добавления в подвал» основных настроек.</conf_description>
+      <conf_group>16</conf_group>
+      <conf_type>textarea</conf_type>
+      <conf_key>ad_code_topic_view_footer</conf_key>
+      <conf_default/>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>12</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>adcodeintegration</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Код для добавления после первого сообщения</conf_title>
+      <conf_description>Данный код будет добавлен после первого сообщения темы</conf_description>
+      <conf_group>16</conf_group>
+      <conf_type>textarea</conf_type>
+      <conf_key>ad_code_topic_view_code</conf_key>
+      <conf_default/>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>13</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>adcodeintegration</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_is_title>1</conf_is_title>
+      <conf_title_keyword>globaltags</conf_title_keyword>
+      <conf_title_title>Настройки системы тегов</conf_title_title>
+      <conf_title_desc>Параметры настройки системы тегов</conf_title_desc>
+      <conf_title_tab>System</conf_title_tab>
+      <conf_title_app>core</conf_title_app>
+      <conf_title_noshow>0</conf_title_noshow>
+    </setting>
+    <setting>
+      <conf_title>Система включена?</conf_title>
+      <conf_description>Включить или отключить систему тегов</conf_description>
+      <conf_group>17</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>tags_enabled</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>1</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>globaltags</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Тип системы</conf_title>
+      <conf_description>Открытая система позволяет пользователям самим создавать теги. Закрытая - администраторы создают теги, пользователи их используют.</conf_description>
+      <conf_group>17</conf_group>
+      <conf_type>dropdown</conf_type>
+      <conf_key>tags_open_system</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra><![CDATA[1=Открытая (создание и добавление тегов на лету)&#13;
+0=Закрытая (использование только заранее созданных тегов)]]></conf_extra>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>2</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>globaltags</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Использование тегов как префиксов тем</conf_title>
+      <conf_description/>
+      <conf_group>17</conf_group>
+      <conf_type>dropdown</conf_type>
+      <conf_key>tags_can_prefix</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra><![CDATA[0=Запретить&#13;
+1=Только администраторам&#13;
+2=Всем кто имеет соответствующие права]]></conf_extra>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>3</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>globaltags</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Разрешенные теги</conf_title>
+      <conf_description>При использовании закрытого типа системы в данной настройке вы должны указать список тегов, которые можно использовать. Разделитель - запятая.</conf_description>
+      <conf_group>17</conf_group>
+      <conf_type>textarea</conf_type>
+      <conf_key>tags_predefined</conf_key>
+      <conf_default/>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>4</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>globaltags</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Преобразовывать имена тегов к нижнему регистру</conf_title>
+      <conf_description/>
+      <conf_group>17</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>tags_force_lower</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>5</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>globaltags</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Минимальное количество тегов к записи</conf_title>
+      <conf_description>0 - отключает ограничение.</conf_description>
+      <conf_group>17</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>tags_min</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>6</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>globaltags</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Максимальное количество тегов к записи</conf_title>
+      <conf_description>0 - отключает ограничение</conf_description>
+      <conf_group>17</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>tags_max</conf_key>
+      <conf_default>10</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>7</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>globaltags</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Минимальная длина тега</conf_title>
+      <conf_description>0 - отключает ограничение</conf_description>
+      <conf_group>17</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>tags_len_min</conf_key>
+      <conf_default>2</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>8</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>globaltags</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Макисмальная длина тега</conf_title>
+      <conf_description>0 - отключает ограничение</conf_description>
+      <conf_group>17</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>tags_len_max</conf_key>
+      <conf_default>30</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>9</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>globaltags</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Проверять теги через фильтр нецензурных слов</conf_title>
+      <conf_description/>
+      <conf_group>17</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>tags_clean</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>10</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>globaltags</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_is_title>1</conf_is_title>
+      <conf_title_keyword>cpusaving</conf_title_keyword>
+      <conf_title_title>Оптимизация нагрузки на сервер</conf_title_title>
+      <conf_title_desc>Данный раздел позволяет ограничить или отключить некоторые функции, что позволит ускорить работу вашего форума.</conf_title_desc>
+      <conf_title_tab>Advanced</conf_title_tab>
+      <conf_title_app>core</conf_title_app>
+      <conf_title_noshow>0</conf_title_noshow>
+    </setting>
+    <setting>
+      <conf_title>Лимит загрузки сервера</conf_title>
+      <conf_description><![CDATA[Когда загрузка достигает указанного предела, отображается «форум перегружен»<br>Вы можете отключить лимит, просто не заполняя данное поле.]]></conf_description>
+      <conf_group>18</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>load_limit</conf_key>
+      <conf_default/>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>1</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>cpusaving</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Отключить кеширование (prefetch)?</conf_title>
+      <conf_description>Некоторые веб-оптимизаторы могут кешировать страницы перед запросом пользователя. Это существенно ускоряет загрузку страницы пользователем, однако, создает дополнительную нагрузку на сервер.</conf_description>
+      <conf_group>18</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>disable_prefetching</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>2</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>cpusaving</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Включить кеширование?</conf_title>
+      <conf_description>Если включить данную опцию, некоторые данные будут кешироваться для сохранения ресурсов сервера.</conf_description>
+      <conf_group>18</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>cc_on</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>4</conf_position>
+      <conf_start_group>Кеширование содержимого</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>cpusaving</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Кеширование сообщений</conf_title>
+      <conf_description><![CDATA[Введите количество дней, через которое кешируемые сообщения будет обновляться?<br/ >
+Введите 0 для отключения кеширования сообщений.]]></conf_description>
+      <conf_group>18</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>cc_posts</conf_key>
+      <conf_default>7</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>6</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>cpusaving</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Кеширование подписей</conf_title>
+      <conf_description><![CDATA[Введите количество дней, через которое кешируемые подписи будет обновляться?<br /> Введите 0 для отключения кеширования подписей.]]></conf_description>
+      <conf_group>18</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>cc_sigs</conf_key>
+      <conf_default>180</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>7</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>cpusaving</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Показывать дополнительные поля профиля при просмотре тем?</conf_title>
+      <conf_description>Если включить данную опцию форум будет использовать «тяжелый» запрос к базе данных «LEFT JOIN...», который сделает выборку необходимых данных из соответствующей таблицы.</conf_description>
+      <conf_group>18</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>custom_profile_topic</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>8</conf_position>
+      <conf_start_group>Оптимизация ресурсов SQL сервера</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>cpusaving</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Период отсутствия, через которое пользователь считается неактивным (в минутах)</conf_title>
+      <conf_description/>
+      <conf_group>18</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>au_cutoff</conf_key>
+      <conf_default>15</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>10</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>cpusaving</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Немедленно обновлять просмотры темы?</conf_title>
+      <conf_description>Если данная опция включена, счетчик количества просмотров темы будет обновляться каждый раз, когда кто-нибудь просматривает данную тему. Если она отключена, то просмотры темы будут записываться в другую таблицу и обновляться каждые 3 часа. Это значительно уменьшит загрузку таблицы тем, если ваш форум очень посещаемый</conf_description>
+      <conf_group>18</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>update_topic_views_immediately</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>12</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>cpusaving</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Отмечать темы, в которые отвечал пользователь?</conf_title>
+      <conf_description/>
+      <conf_group>18</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>show_user_posted</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>13</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>cpusaving</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Удалять длительные поисковые запросы?</conf_title>
+      <conf_description><![CDATA[Количество секунд, после истечения которых, поисковый запрос будет удален.<br />
+Введите 0 для отключения удаления.]]></conf_description>
+      <conf_group>18</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>kill_search_after</conf_key>
+      <conf_default>30</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>14</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>resources, search, kill</conf_keywords>
+      <conf_title_keyword>cpusaving</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Отключить «Пользователи, просматривающие данный форум»?</conf_title>
+      <conf_description>Позволяет уменьшить количество запросов на 1 при каждом просмотре форума</conf_description>
+      <conf_group>18</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>no_au_forum</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra>no_au_forum</conf_extra>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>15</conf_position>
+      <conf_start_group>Отключение возможностей</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>cpusaving</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Отключить «Пользователи, просматривающие данную тему»?</conf_title>
+      <conf_description>Позволяет уменьшить количество запросов на 1 при каждом просмотре темы</conf_description>
+      <conf_group>18</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>no_au_topic</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>16</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>cpusaving</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Показывать активных пользователей?</conf_title>
+      <conf_description/>
+      <conf_group>18</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>show_active</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>17</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>cpusaving</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Отключить краткое изложение темы?</conf_title>
+      <conf_description>Отключить отображение краткого изложения темы внизу страницы, на которой пишется ответ в тему?</conf_description>
+      <conf_group>18</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>disable_summary</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>18</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>cpusaving</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Разрешить пользователям пользоваться поиском?</conf_title>
+      <conf_description/>
+      <conf_group>18</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>allow_search</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>19</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>cpusaving</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Показывать статистику форума?</conf_title>
+      <conf_description>Отображение статистики форума внизу главной страницы.</conf_description>
+      <conf_group>18</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>show_totals</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>21</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>cpusaving</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Отключить подфорумы на главной странице форума</conf_title>
+      <conf_description>Отключить отображение подфорумов на главной странице форума?</conf_description>
+      <conf_group>18</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>disable_subforum_show</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>24</conf_position>
+      <conf_start_group>Уменьшение HTML кода</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>cpusaving</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Подгружать javascript файлы из серверов Google</conf_title>
+      <conf_description>Включив эту функцию, некоторые javascript файлы будут загружаться из серверов Google, что позволит немного снизить нагрузку на ваш сервер.</conf_description>
+      <conf_group>18</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>remote_load_js</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>26</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>cpusaving</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Включить отслеживание прочитанных тем?</conf_title>
+      <conf_description/>
+      <conf_group>18</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>topic_marking_enable</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>28</conf_position>
+      <conf_start_group>Отслеживание статуса прочитанных тем</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>cpusaving</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Сколько дней хранить информацию о прочтении</conf_title>
+      <conf_description>После указанного количества дней, сообщения будут считаться прочитанными</conf_description>
+      <conf_group>18</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>topic_marking_keep_days</conf_key>
+      <conf_default>30</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>30</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>cpusaving</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Разрешить отслеживание статуса прочтенности для гостей</conf_title>
+      <conf_description>Гости используют cookie для отслеживания статуса тем. Вы можете полностью отключить отслеживание для гостей.</conf_description>
+      <conf_group>18</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>topic_marking_guests</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>31</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>cpusaving</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_is_title>1</conf_is_title>
+      <conf_title_keyword>boardoffline</conf_title_keyword>
+      <conf_title_title>Отключение форума</conf_title_title>
+      <conf_title_desc>При помощи данной группы настроек, вы можете включить или выключить (режим offline) ваш форум для пользователей.</conf_title_desc>
+      <conf_title_tab>System</conf_title_tab>
+      <conf_title_app>core</conf_title_app>
+      <conf_title_noshow>0</conf_title_noshow>
+    </setting>
+    <setting>
+      <conf_title>Перевести форум в режим offline?</conf_title>
+      <conf_description>Форум будет доступен только тем, кто имеет права для просмотра форума в режиме offline.&#13;
+(настраивается в правах групп пользователей)</conf_description>
+      <conf_group>19</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>board_offline</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>1</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>boardoffline</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Сообщение</conf_title>
+      <conf_description>Данное сообщение будет выведено тем пользователям, которые не могут использовать форум в режиме offline.</conf_description>
+      <conf_group>19</conf_group>
+      <conf_type>editor</conf_type>
+      <conf_key>offline_msg</conf_key>
+      <conf_default/>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>2</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>0</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>boardoffline</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_is_title>1</conf_is_title>
+      <conf_title_keyword>seo</conf_title_keyword>
+      <conf_title_title>Поисковая оптимизация (SEO)</conf_title_title>
+      <conf_title_desc>Настройки для улучшения работы форума с поисковыми системами</conf_title_desc>
+      <conf_title_tab>System</conf_title_tab>
+      <conf_title_app>core</conf_title_app>
+      <conf_title_noshow>0</conf_title_noshow>
+    </setting>
+    <setting>
+      <conf_title>Журналировать действия поисковых роботов?</conf_title>
+      <conf_description>Опция позволяет включить ведение подробного журнала посещения поисковым роботом вашего форума. Данную настройку имеет смысл включать на короткое время, только для анализа индексируемости вашего форума. При большом количестве поисковых роботов на вашем форуме, из-за этой настройки может возникнуть большая нагрузка на сервер.</conf_description>
+      <conf_group>20</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>spider_visit</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>2</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>seo</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Показывать ботов в списке активных пользователей?</conf_title>
+      <conf_description/>
+      <conf_group>20</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>spider_active</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>5</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>seo</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Перенаправление на новые URL?</conf_title>
+      <conf_description>Включение данной опции позволяет перенаправить посетителя, пришедшего по старому адресу, вида showxxxx=x, на новый ЧПУ адрес страницы.</conf_description>
+      <conf_group>20</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>seo_r_on</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>14</conf_position>
+      <conf_start_group>Настройки ЧПУ</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>seo</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Тип URL</conf_title>
+      <conf_description><![CDATA[При типе URL «Путь» адреса будут иметь вид <b>/index.php/forum/2-news/</b><br />
+При типе URL «Запрос» - <b>/index.php?/forum/2-news/</b><br /><br />
+Выбор типа ограничивается так же программным обеспечением сервера. Следует знать, что если используется веб сервер Apache и PHP его модуль, то можно использовать оба типа URL. Если же сервер на платформе Windows или PHP установлен как CGI, то использовать можно только тип «Запрос»]]></conf_description>
+      <conf_group>20</conf_group>
+      <conf_type>dropdown</conf_type>
+      <conf_key>url_type</conf_key>
+      <conf_default>query_string</conf_default>
+      <conf_extra><![CDATA[path_info=Путь&#13;
+query_string=Запрос]]></conf_extra>
+      <conf_evalphp><![CDATA[if ( $show == 1 AND ! $this->settings['use_friendly_urls'] )
+{
+	$r['conf_description'] .= "<div style='color:red'>Внимание: ЧПУ не автивировано. Вам необходимо изменить 'conf_global.php' и добавить в конец файла строку: <kbd>&#092;$INFO&#092;['use_friendly_urls'&#092;]            = '1';</kdb></div>";
+}]]></conf_evalphp>
+      <conf_protected>1</conf_protected>
+      <conf_position>16</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>seo</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Использовать .htaccess mod_rewrite?</conf_title>
+      <conf_description><![CDATA[При включении этой опции необходимо будет создать файл .htaccess в корневой директории форума со следующим содержимым.<br />
+<!-- MOD_REWITE_EXAMPLE -->]]></conf_description>
+      <conf_group>20</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>htaccess_mod_rewrite</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp><![CDATA[if( $show == 1 )
+{
+	$r['conf_description'] = str_replace( '<!-- MOD_REWITE_EXAMPLE -->', nl2br( $this->registry->adminFunctions->fetchModRewrite() ), $r['conf_description'] );
+}]]></conf_evalphp>
+      <conf_protected>1</conf_protected>
+      <conf_position>17</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>seo</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Title</conf_title>
+      <conf_description>Укажите текст, который будет использоваться в мета-теге title. Если оставить поле пустым, будет использоваться название форума.</conf_description>
+      <conf_group>20</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>seo_index_title</conf_key>
+      <conf_default/>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>19</conf_position>
+      <conf_start_group>Главная страница</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords>seo,title</conf_keywords>
+      <conf_title_keyword>seo</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Description</conf_title>
+      <conf_description>Укажите текст, который будет использоваться в мета-теге description</conf_description>
+      <conf_group>20</conf_group>
+      <conf_type>textarea</conf_type>
+      <conf_key>seo_index_md</conf_key>
+      <conf_default/>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>20</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>seo</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Keywords</conf_title>
+      <conf_description>Укажите текст, который будет использоваться в мета-теге keywords</conf_description>
+      <conf_group>20</conf_group>
+      <conf_type>textarea</conf_type>
+      <conf_key>seo_index_mk</conf_key>
+      <conf_default/>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>20</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>seo</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_is_title>1</conf_is_title>
+      <conf_title_keyword>boardguidelines</conf_title_keyword>
+      <conf_title_title>Правила форума</conf_title_title>
+      <conf_title_desc>Данный раздел позволяет создать и поддерживать общие правила форума.</conf_title_desc>
+      <conf_title_tab>System</conf_title_tab>
+      <conf_title_app>core</conf_title_app>
+      <conf_title_noshow>0</conf_title_noshow>
+    </setting>
+    <setting>
+      <conf_title>Показать ссылку на правила в подвале форума</conf_title>
+      <conf_description/>
+      <conf_group>21</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>gl_show</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>1</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>boardguidelines</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Название</conf_title>
+      <conf_description/>
+      <conf_group>21</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>gl_title</conf_key>
+      <conf_default/>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>2</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>boardguidelines</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Ссылка на страницу правил</conf_title>
+      <conf_description>Введите URL страницы, где расположены ваши правила или оставьте это поле пустым.</conf_description>
+      <conf_group>21</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>gl_link</conf_key>
+      <conf_default/>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>3</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>boardguidelines</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Если не используете ссылку на правила; введите текст правил здесь</conf_title>
+      <conf_description>Разрешен HTML</conf_description>
+      <conf_group>21</conf_group>
+      <conf_type>editor</conf_type>
+      <conf_key>gl_guidelines</conf_key>
+      <conf_default/>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>4</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>0</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>boardguidelines</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Правила и условия регистрации</conf_title>
+      <conf_description><![CDATA[Данные правила будут показаны пользователю в процессе регистрации новой учетной записи на форуме.
+<b>HTML разрешен</b>]]></conf_description>
+      <conf_group>21</conf_group>
+      <conf_type>editor</conf_type>
+      <conf_key>reg_rules</conf_key>
+      <conf_default><![CDATA[<b>Правила и положения форума</b>
+
+Пожалуйста, уделите немного внимания и прочтите краткие правила, указанные ниже. Если вы принимаете их и желаете продолжить процесс регистрации, отметьте свое согласие и нажмите кнопку «Регистрация». Для отмены регистрации нажмите кнопку «Назад» в вашем браузере.
+
+Пожалуйста, помните, что мы не отвечаем на все публикуемые сообщения.
+
+На форуме отсутствует предварительная проверка открываемых тем и публикаций. Как только вы отправляете сообщение — оно сразу публикуется на форуме. Администрация форума снимает с себя ответственность за содержание сообщений, публикуемых пользователями. Ответственность за содержание сообщения несёт только его автор.
+
+На форуме запрещено:
+отправка сообщений не по содержанию форума/темы, оскорбления и угрозы в адрес пользователей форума, пропаганда расовой, национальной и религиозной вражды; реклама и самореклама;
+ненормативная лексика, сексуальные домогательства и т.д.
+
+Нарушители правил будут строго наказаны модераторами или администраторами форума и им будет закрыт доступ на форум.
+
+Принимая данные правила, вы соглашаетесь не публиковать любой материал, защищенный авторским правом, если авторское право не принадлежит вам.]]></conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>5</conf_position>
+      <conf_start_group>Правила и условия регистрации</conf_start_group>
+      <conf_add_cache>0</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>boardguidelines</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_is_title>1</conf_is_title>
+      <conf_title_keyword>ipbcopyright</conf_title_keyword>
+      <conf_title_title>Удаление «копирайтов» со страниц форума</conf_title_title>
+      <conf_title_desc>Позволяет удалить упоминания о производителе из пользовательского интерфейса.</conf_title_desc>
+      <conf_title_tab>IPS Apps</conf_title_tab>
+      <conf_title_app>core</conf_title_app>
+      <conf_title_noshow>0</conf_title_noshow>
+    </setting>
+    <setting>
+      <conf_title>Ключ для удаления копирайта</conf_title>
+      <conf_description>Данный ключ вы должны получить у IPS.</conf_description>
+      <conf_group>22</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>ipb_copy_number</conf_key>
+      <conf_default/>
+      <conf_extra/>
+      <conf_evalphp><![CDATA[if( $save == 1 )
+{
+  if( !preg_match( "#^[0-9]+?-[0-9]+?-[0-9]+?-[0-9]+?#", $_POST[ $key ] ) )
+  {
+   $_POST[ $key ] = "";
+  }
+}]]></conf_evalphp>
+      <conf_protected>1</conf_protected>
+      <conf_position>1</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>ipbcopyright</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Не показывать копирайт?</conf_title>
+      <conf_description/>
+      <conf_group>22</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>ips_cp_purchase</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>2</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>ipbcopyright</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_is_title>1</conf_is_title>
+      <conf_title_keyword>coppa</conf_title_keyword>
+      <conf_title_title>Установка COPPA</conf_title_title>
+      <conf_title_desc><![CDATA[Данная опция позволяет активировать <a href='http://www.ftc.gov/ogc/coppa1.htm' target='_blank'>COPPA</a>.]]></conf_title_desc>
+      <conf_title_tab>Members</conf_title_tab>
+      <conf_title_app>core</conf_title_app>
+      <conf_title_noshow>1</conf_title_noshow>
+    </setting>
+    <setting>
+      <conf_title>Использовать регистрационную систему COPPA?</conf_title>
+      <conf_description><![CDATA[Включение <a href="http://www.ftc.gov/ogc/coppa1.htm" target="_blank">COPPA</a> на вашем форуме потребует, чтобы все дети младше 13 лет имели письменное разрешение от родителей, отправленное по факсу или почте.]]></conf_description>
+      <conf_group>23</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>use_coppa</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>1</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>coppa</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Номер факса для получения заявлений</conf_title>
+      <conf_description/>
+      <conf_group>23</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>coppa_fax</conf_key>
+      <conf_default/>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>2</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>coppa</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Почтовый адрес для получения заявлений</conf_title>
+      <conf_description/>
+      <conf_group>23</conf_group>
+      <conf_type>textarea</conf_type>
+      <conf_key>coppa_address</conf_key>
+      <conf_default/>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>3</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>coppa</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Дополнительная COPPA информация</conf_title>
+      <conf_description>Этот текст будет отображен в форме заполнения заявления родительского разрешения на посещение форума.</conf_description>
+      <conf_group>23</conf_group>
+      <conf_type>editor</conf_type>
+      <conf_key>coppa_consent_extra</conf_key>
+      <conf_default/>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>4</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>coppa</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_is_title>1</conf_is_title>
+      <conf_title_keyword>date</conf_title_keyword>
+      <conf_title_title>Формат чисел, времени и дат</conf_title_title>
+      <conf_title_desc>Группа опций содержит настройки форматов типов данных используемых на форуме.</conf_title_desc>
+      <conf_title_tab>Advanced</conf_title_tab>
+      <conf_title_app>core</conf_title_app>
+      <conf_title_noshow>0</conf_title_noshow>
+    </setting>
+    <setting>
+      <conf_title>Часовой пояс сервера</conf_title>
+      <conf_description><![CDATA[<span style='color:red'>Если вы выбрали правильный часовой пояс, а показания часов отличаются на час, то это связано с летним/зимним временем. Пользователи вашего форума могут откорректировать эту функцию в Настройках форума при помощи Панели управления пользователя.</span>]]></conf_description>
+      <conf_group>24</conf_group>
+      <conf_type>dropdown</conf_type>
+      <conf_key>time_offset</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp><![CDATA[if ( $show == 1 )
+{
+	ipsRegistry::getClass('class_localization')->loadLanguageFile( array( 'public_usercp' ), 'core' );
+	
+	foreach( ipsRegistry::getClass('class_localization')->words as $off => $words )
+	{
+		if (preg_match("/^time_(-?[&#092;d&#092;.]+)$/", $off, $match))
+		{
+			$dropdown[ $match[1] ] = array( $match[1], $words );
+		}
+	}
+	
+	ksort($dropdown);
+}]]></conf_evalphp>
+      <conf_protected>1</conf_protected>
+      <conf_position>1</conf_position>
+      <conf_start_group>Корректировка времени</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>date</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Корректировка времени сервера</conf_title>
+      <conf_description><![CDATA[Позволяет более точно настроить время на сервере. Значение указывается в минутах, со знаком + или -, соответственно для добавления или вычитания определенного количества минут.
+<br>Текущее время в системе (с использованием всех настроек):<br /><-T->]]></conf_description>
+      <conf_group>24</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>time_adjust</conf_key>
+      <conf_default>0</conf_default>
+      <conf_extra/>
+      <conf_evalphp><![CDATA[if ( $show )
+{
+ $d_date = ipsRegistry::getClass('class_localization')->getDate(time(), 'LONG',1);
+$r['conf_description'] = str_replace( '<-T->', $d_date, $r['conf_description'] );
+}]]></conf_evalphp>
+      <conf_protected>1</conf_protected>
+      <conf_position>2</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>date</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Использовать относительные даты?</conf_title>
+      <conf_description/>
+      <conf_group>24</conf_group>
+      <conf_type>dropdown</conf_type>
+      <conf_key>time_use_relative</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra><![CDATA[0=Нет&#13;
+1=Да ( сегодня и вчера )&#13;
+2=Да ( последние X минут, сегодня и вчера)&#13;
+3=Да ( все сразу )]]></conf_extra>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>3</conf_position>
+      <conf_start_group>Относительные даты</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>date</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Формат относительных дат</conf_title>
+      <conf_description>{--} заменяется на «сегодня» или «вчера»</conf_description>
+      <conf_group>24</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>time_use_relative_format</conf_key>
+      <conf_default>{--}, %H:%M</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>4</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>date</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Автоматический перевод часов</conf_title>
+      <conf_description>Включение данной опции позволяет автоматически производить переход пользователей с летнее/зимнее время.</conf_description>
+      <conf_group>24</conf_group>
+      <conf_type>yes_no</conf_type>
+      <conf_key>time_dst_auto_correction</conf_key>
+      <conf_default>1</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>5</conf_position>
+      <conf_start_group>Переход на зимнее/летнее время</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>date</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Полный формат</conf_title>
+      <conf_description><![CDATA[Назначение ключей можно посмотреть в <a href='http://uk.php.net/manual/en/function.strftime.php'>PHP strftime</a>]]></conf_description>
+      <conf_group>24</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>clock_long</conf_key>
+      <conf_default>%d %B %Y - %H:%M</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>6</conf_position>
+      <conf_start_group>Формат дат</conf_start_group>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>date</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Сокращенный формат</conf_title>
+      <conf_description><![CDATA[Назначение ключей можно посмотреть в <a href='http://uk.php.net/manual/en/function.strftime.php'>PHP strftime</a>]]></conf_description>
+      <conf_group>24</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>clock_short</conf_key>
+      <conf_default>%d %b %Y %H:%M</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>7</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>date</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Альтернативный сокращенный формат</conf_title>
+      <conf_description><![CDATA[Назначение ключей можно посмотреть в <a href='http://uk.php.net/manual/en/function.strftime.php'>PHP strftime</a>]]></conf_description>
+      <conf_group>24</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>clock_short2</conf_key>
+      <conf_default>%d %B %Y</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>8</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>date</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Формат даты регистрации</conf_title>
+      <conf_description><![CDATA[Назначение ключей можно посмотреть в <a href='http://uk.php.net/manual/en/function.strftime.php'>PHP strftime</a>]]></conf_description>
+      <conf_group>24</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>clock_joined</conf_key>
+      <conf_default>%d-%B %y</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>9</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>date</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Краткий формат</conf_title>
+      <conf_description><![CDATA[Назначение ключей можно посмотреть в <a href='http://uk.php.net/manual/en/function.strftime.php'>PHP strftime</a>]]></conf_description>
+      <conf_group>24</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>clock_tiny</conf_key>
+      <conf_default>%d %b %Y - %H:%M</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>10</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>date</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+    <setting>
+      <conf_title>Формат даты</conf_title>
+      <conf_description><![CDATA[Назначение ключей можно посмотреть в <a href='http://uk.php.net/manual/en/function.strftime.php'>PHP strftime</a>]]></conf_description>
+      <conf_group>24</conf_group>
+      <conf_type>input</conf_type>
+      <conf_key>clock_date</conf_key>
+      <conf_default>%d %b %Y</conf_default>
+      <conf_extra/>
+      <conf_evalphp/>
+      <conf_protected>1</conf_protected>
+      <conf_position>11</conf_position>
+      <conf_start_group/>
+      <conf_add_cache>1</conf_add_cache>
+      <conf_keywords/>
+      <conf_title_keyword>date</conf_title_keyword>
+      <conf_is_title>0</conf_is_title>
+    </setting>
+  </settinggroup>
+</settingexport>
